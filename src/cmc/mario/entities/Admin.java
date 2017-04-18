@@ -1,7 +1,7 @@
 /**
  * File: Admin.java
  */
-package edu.csbsju.csci230;
+package cmc.mario.entities;
 
 /**
  * Admin Class which includes the basic 

@@ -1,11 +1,10 @@
-package edu.csbsju.csci230;
+package cmc.mario.controllers;
 /**
  * File: UserFuncController.java 
  */
 
 import java.util.*;
 
-import cmc.mario.entities.Account;
 import cmc.mario.entities.University;
 import cmc.mario.entities.User;
 

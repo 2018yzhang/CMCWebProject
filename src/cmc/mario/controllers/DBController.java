@@ -1,9 +1,11 @@
 /**
  * File: DBController.java
  */
-package edu.csbsju.csci230;
+package cmc.mario.controllers;
 import dblibrary.project.csci230.*;
+
 import java.util.*;
+
 import cmc.mario.entities.Account;
 import cmc.mario.entities.University;
 import cmc.mario.entities.User;

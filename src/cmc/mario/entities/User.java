@@ -1,4 +1,4 @@
-package edu.csbsju.csci230;
+package cmc.mario.entities;
 /**
  * File: User.java
  */

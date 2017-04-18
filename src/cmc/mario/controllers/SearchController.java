@@ -1,8 +1,9 @@
-package edu.csbsju.csci230;
+package cmc.mario.controllers;
 /**
  * File: SearchController.java
  */
 import java.lang.reflect.Array;
+
 import java.util.*;
 
 import cmc.mario.entities.University;

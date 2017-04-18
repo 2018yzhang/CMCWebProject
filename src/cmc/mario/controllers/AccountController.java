@@ -1,14 +1,10 @@
-package edu.csbsju.csci230;
+package cmc.mario.controllers;
 import java.util.List;
 
-/**
- * File: AccountController.java
- */
 import cmc.mario.entities.Account;
 import cmc.mario.entities.Admin;
-import cmc.mario.entities.User;
-import cmc.mario.interfaces.AccountUI;
 import cmc.mario.interfaces.AdminUI;
+import cmc.mario.entities.User;
 import cmc.mario.interfaces.UserUI;
 
 /**
