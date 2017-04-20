@@ -11,18 +11,18 @@ Login form:<br>
 String anyErrors = request.getParameter("Error");
 
 if (anyErrors!=null&&anyErrors.equals("2"))
-	out.print("Hello, the account is deactive.");
+	out.print("Hello, the account has been deactivated.");
 else if (anyErrors!=null&&anyErrors.equals("3"))
-	out.print("Hello, the password is not correct.");
+	out.print("Hello, the password is incorrect.");
 else if (anyErrors!=null&&anyErrors.equals("4"))
-	out.print("Hello, the username is not correct");
+	out.print("Hello, the username is incorrect");
 %>
 <form method="post" action="Login_action.jsp" name="Login"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
-<td style="vertical-align: top;">Username<br>
+<td style="vertical-align: top;">User name<br>
 </td>
 <td style="vertical-align: top;"><input name="Username"> </td>
 </tr>

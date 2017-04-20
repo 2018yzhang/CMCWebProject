@@ -1,16 +1,15 @@
+<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.ArrayList"%>
 <html>
 <head>
-
-<title>Edit User Form</title>
+<title></title>
 </head>
-<body>
-<br>
-Edit User form:<br>
-<br>
-
 <%
-    out.println("Edit user : " + request.getParameter("Username"));
+	out.print("View/Edit user profile");
+	String anyErrors = request.getParameter("Error");
+	if (anyErrors!=null&&anyErrors.equals("1"))
+	out.print("Unable to edit user");
 %>
+<body>
 <form method="post" action="Edit_action.jsp" name="editUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
@@ -62,4 +61,3 @@ name="Reset" type="reset"></td>
 <br>
 </body>
 </html>
-
