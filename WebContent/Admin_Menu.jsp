@@ -1,12 +1,14 @@
-<%@page language="java" import="edu.csbsju.csci230.*" import="java.util.ArrayList"%>
+<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <html>
 <head>
 <title></title>
 </head>
 <%
-	UserController uc = (UserController)session.getAttribute("uc");
-	User u = uc.getCurrentUser();
-	out.print("Hello User "+u.getUsername());
+	AccountUI ui = (AccountUI)session.getAttribute("ui");
+	AccountController ac = ui.getAccountController();
+	Admin a = (Admin)ac.getAcct();
+	AdminFuncController adminC= new AdminFuncController(a);
+	out.print("Hello Admin "+a.getUsername());
 %>
 <body>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
@@ -21,7 +23,9 @@ href="Add.jsp">ADD A USER</a>
 <tr>
 <td style="vertical-align: top;">
 Edit</td>
-<td style="vertical-align: top; text-align: center;">Full name
+<td style="vertical-align: top; text-align: center;">First
+</td>
+<td style="vertical-align: top; text-align: center;">Last
 </td>
 <td style="vertical-align: top; text-align: center;">Username
 </td>
@@ -37,7 +41,7 @@ Edit</td>
 
 <tr>
 <%
-	ArrayList<User> usrList = uc.getAllUsers();
+	List<Account> usrList = adminC.viewAccount();
 %>
 
 <tr>
@@ -48,10 +52,11 @@ Edit</td>
     <input name="Username" value="???" type="hidden">
 </form>
 </td>
-               <td><%=usrList.get(c).getFullName()%></td>
+               <td><%=usrList.get(c).getFirstName()%></td>
+               <td><%=usrList.get(c).getLastName()%></td>
                 <td><%=usrList.get(c).getUsername()%></td>
                 <td><%=usrList.get(c).getPassword()%></td>
-                <td><%=usrList.get(c).getType()%></td>
+                <td><%=usrList.get(c).getTypeOfUser()%></td>
                 <td><%=usrList.get(c).getStatus()%></td>
                 <td style="vertical-align: top;">
 <form method="post" action="Delete.jsp" name="Delete">

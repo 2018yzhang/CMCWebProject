@@ -57,4 +57,8 @@ public class AccountUI{
 		  return this.acctCtr.typeOfUser(username);
 	  }
 	  
+	  public AccountController getAccountController(){
+		  return this.acctCtr;
+	  } 
+	  
 }

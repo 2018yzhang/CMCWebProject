@@ -86,12 +86,14 @@ public class AccountController {
 					  if(a.getTypeOfUser()=='a'){
 						  Admin adm =new Admin(a.getFirstName(),a.getLastName(),a.getUsername(),a.getPassword());
 						  adm.setActive(true);
+						  this.acct=adm;
 						  new AdminUI(adm);
 						  status=0;
 					  }
 					  else{
 						  User u = new User(a.getFirstName(),a.getLastName(),a.getUsername(),a.getPassword());
 						  u.setActive(true);
+						  this.acct=u;
 						  new UserUI(u);
 						  status=1;
 					  }
