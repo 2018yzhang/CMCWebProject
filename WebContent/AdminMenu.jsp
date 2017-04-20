@@ -1,11 +1,11 @@
-<%@page language="java" import="edu.csbsju.csci230.*" import="java.util.ArrayList"%>
+<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.ArrayList"%>
 <html>
 <head>
 <title></title>
 </head>
 <%
-	UserController uc = (UserController)session.getAttribute("uc");
-	User u = uc.getCurrentUser();
+	UserFuncController uc = (UserFuncController)session.getAttribute("uc");
+	User u = uc.getUser();
 	out.print("Hello User "+u.getUsername());
 %>
 <body>
