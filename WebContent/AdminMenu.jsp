@@ -37,7 +37,7 @@ Edit</td>
 
 <tr>
 <%
-	ArrayList<User> usrList = uc.getAllUsers();
+	ArrayList<User> usrList = uc.getAllUsers(); //Kalila - add getAllUsers method in UserFuncController
 %>
 
 <tr>
@@ -48,7 +48,8 @@ Edit</td>
     <input name="Username" value="???" type="hidden">
 </form>
 </td>
-               <td><%=usrList.get(c).getFullName()%></td>
+               <td><%=usrList.get(c).getFirstName()%></td>
+               <td><%=usrList.get(c).getLastName()%></td>
                 <td><%=usrList.get(c).getUsername()%></td>
                 <td><%=usrList.get(c).getPassword()%></td>
                 <td><%=usrList.get(c).getType()%></td>

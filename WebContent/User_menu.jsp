@@ -6,14 +6,16 @@
 <%
 	//UserFuncController uc = (UserFuncController)session.getAttribute("uc");
 	//User u = uc.getCurrentUser();
-	UserFuncController uc = (UserFuncController)session.getAttribute("uc");
-	User u = uc.getUser();
-	out.print("Hello User "+u.getUsername());
+// 	UserFuncController uc = (UserFuncController)session.getAttribute("uc");
+// 	User u = uc.getUser();
+// 	out.print("Hello User "+u.getUsername()); 
+	out.print("Hello User ");
 %>
 <body>
-<a href="Search_schools.jsp">Search for Schools</a>
-<a href="Manage_savedschoolspage.jsp">Search for Schools</a>
-<a href="Manage_myprofile.jsp">Search for Schools</a>
+<br>
+<a href="Search_schools.jsp">Search for Schools</a><br>
+<a href="Manage_savedschoolspage.jsp">Manage My Saved Schools</a><br>
+<a href="Manage_myprofile.jsp">Manage My Profile</a><br>
 </body>
 </html>
 

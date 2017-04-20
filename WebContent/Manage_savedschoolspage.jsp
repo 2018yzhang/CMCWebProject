@@ -1,12 +1,44 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.List"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title></title>
 </head>
+<%
+	DBController db = (DBController)session.getAttribute("uc");
+	out.print("View/Edit user profile");
+	String anyErrors = request.getParameter("Error");
+	if (anyErrors!=null&&anyErrors.equals("1"))
+	out.print("Unable to edit user");
+	List<University> univList = db.getUniversities();
+%>
 <body>
-
+<table style="text-align: left; width: 266px; height: 228px;"
+border="1" >
+<tbody>
+<tr>
+<td style="vertical-align: center;">School<br>
+</td>
+<tr>
+         	<% for(int c = 0; c < univList.size();c++){  %>
+         	<td style="vertical-align: top;">
+<form method="post" action="Remove_school.jsp" name="Remove">
+    <input name="Remove" value="Remove" type="submit">
+    <input name="Username" value="???" type="hidden">
+</form>
+</td>
+               <td><%=univList.get(c).getSchoolName()%></td>
+                <td style="vertical-align: top;">
+<form method="post" action="View_specificschool.jsp" name="ViewSpecificSchool">
+    <input name="ViewSpecificSchool" value="ViewSpecificSchool" type="submit">
+    <input name="Username" value="???" type="hidden">
+</form>
+</td>
+</tr>
+<% } 
+            %>
+</tbody>
+</table>
+<br>
+<br>
 </body>
 </html>
