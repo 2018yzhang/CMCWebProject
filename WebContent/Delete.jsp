@@ -1,4 +1,4 @@
-<%@page language="java" import="edu.csbsju.csci230.*,java.util.*"%>
+<%@page language="java" import="cmc.mario.*,java.util.*"%>
 
 <%
     out.println("delete user : " + request.getParameter("Username"));
