@@ -8,14 +8,14 @@
 Login form:<br>
 <br>
 <%
-String anyErrors = request.getParameter("ERROR");
-out.print(anyErrors);
-if (anyErrors.equals("1"))
-	out.print("Hello, Provided username is not valid.");
-else if (anyErrors.equals("2"))
-	out.print("Hello, Provided password is not valid.");
-else if (anyErrors.equals("3"))
-	out.print("Hello, An error occurred while attempting to access the database");
+String anyErrors = request.getParameter("Error");
+
+if (anyErrors!=null&&anyErrors.equals("2"))
+	out.print("Hello, the account is deactive.");
+else if (anyErrors!=null&&anyErrors.equals("3"))
+	out.print("Hello, the password is not correct.");
+else if (anyErrors!=null&&anyErrors.equals("4"))
+	out.print("Hello, the username is not correct");
 %>
 <form method="post" action="Login_action.jsp" name="Login"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
