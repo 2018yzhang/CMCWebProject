@@ -4,7 +4,7 @@
 <title></title>
 </head>
 <%
-	DBController db = (DBController)session.getAttribute("uc");
+	DBController db = (DBController)session.getAttribute("ui");
 	out.print("View/Edit user profile");
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1"))

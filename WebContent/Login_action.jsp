@@ -4,7 +4,6 @@
 	String uname = request.getParameter("Username");
 	String password = request.getParameter("Password");
 
-
 	int k = acctU.logOn(uname, password);
 	if(k==0){
 		session.setAttribute("ui", acctU );

@@ -17,35 +17,30 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">First Name<br>
 </td>
-<td style="vertical-align: top;"><input name="FirstName" value="???"><br>
+<td style="vertical-align: top;"><input name="FirstName"><br>
 </td>
 </tr>
 <tr>
 <tr>
 <td style="vertical-align: top;">Last Name<br>
 </td>
-<td style="vertical-align: top;"><input name="LastName" value="???"><br>
+<td style="vertical-align: top;"><input name="LastName"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Username" value="???" readonly> </td>
+<td style="vertical-align: top;"><input name="Username" readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
 </td>
-<td style="vertical-align: top;"><input name="Password" value="???"> </td>
+<td style="vertical-align: top;"><input name="Password"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
-<td style="vertical-align: top;"><input name="Type" value="???"> </td>
-</tr>
-<tr>
-<td style="vertical-align: top;">Status<br>
-</td>
-<td style="vertical-align: top;"><input name="Status" value="???"> </td>
+<td style="vertical-align: top;"><input name="Type" readonly> </td>
 </tr>
 
 <tr>

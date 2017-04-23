@@ -4,11 +4,16 @@
 <title></title>
 </head>
 <%
-	//UserFuncController uc = (UserFuncController)session.getAttribute("uc");
+	//UserFuncController uc = (UserFun cController)session.getAttribute("uc");
 	//User u = uc.getCurrentUser();
 // 	UserFuncController uc = (UserFuncController)session.getAttribute("uc");
 // 	User u = uc.getUser();
 // 	out.print("Hello User "+u.getUsername()); 
+// 	AccountUI ui = (AccountUI)session.getAttribute("ui");
+// 	AccountController ac = ui.getAccountController();
+// 	User u = (User)ac.getAcct();
+// 	UserFuncController adminC= new UserFuncController(u);
+// 	out.print("Hello User: "+u.getUsername());
 	out.print("Hello User ");
 %>
 <body>

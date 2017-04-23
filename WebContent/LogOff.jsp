@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%
+	HttpSession s = request.getSession(false);
+	if(session != null)
+   		session.invalidate();
+		request.getRequestDispatcher("/login.jsp").forward(request,response);
+%>
 </body>
 </html>
