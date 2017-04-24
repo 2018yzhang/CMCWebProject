@@ -7,7 +7,7 @@
 <title>Menu List</title>
 </head>
 <body>
-<a href="manage_University.jsp">Manage University</a> <br>
+<a href="ViewUniversities.jsp">Manage University</a> <br>
 <a href="manage_Users.jsp">Manage Users</a> <br>
 <% AccountUI ui = (AccountUI)session.getAttribute("ui");
 AccountController acctCtr = ui.getAccountController();
