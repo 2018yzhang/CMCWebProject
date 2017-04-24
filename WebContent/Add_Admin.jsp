@@ -7,7 +7,7 @@
 <br>
 Add User form:<br>
 <br>
-<form method="post" action="Add_action.jsp" name="addUser"><br>
+<form method="post" action="Add_action_Admin.jsp" name="addUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
