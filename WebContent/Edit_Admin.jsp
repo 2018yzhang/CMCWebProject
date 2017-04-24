@@ -4,10 +4,14 @@
 <title></title>
 </head>
 <%
-	String uname = request.getParameter("Username");
+
 	out.print("View/Edit profile");
 	AdminFuncController ac = (AdminFuncController)session.getAttribute("uc");
+	String uname = request.getParameter("Username");
 	Account a =ac.viewSpecificUser(uname);
+	if(a==null){
+		response.sendRedirect("Edit_Admin.jsp?Error=1AlreadyExistingUserOrIncorrectInputs");
+	}
 	session.setAttribute("a", a );
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1")){

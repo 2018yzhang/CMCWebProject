@@ -48,7 +48,8 @@ Edit</td>
          	<td style="vertical-align: top;">
 <form method="post" action="Edit_Admin.jsp" name="Edit">
     <input name="Edit" value="Edit" type="submit">
-    <input name="Username" value="???" type="hidden">
+    <%String uname = usrList.get(c).getUsername(); %>
+    <input name="Username" value=uname type="hidden">
 </form>
 </td>
                <td><%=usrList.get(c).getFirstName()%></td>
@@ -59,7 +60,7 @@ Edit</td>
                 <td><%=usrList.get(c).getStatus()%></td>
                 <td style="vertical-align: top;">
 <form method="post" action="Deactive_Admin.jsp" name="Deactive">
-    <input name="Deactive" value="Deactive" type="submit">
+    <input name="Deactive" value="Deactive" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input name="Username" value="???" type="hidden">
 </form>
 </td>
