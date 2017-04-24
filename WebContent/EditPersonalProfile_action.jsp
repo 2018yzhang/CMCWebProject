@@ -1,6 +1,5 @@
 <%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <%
-	DBController db = new DBController();
 	UserFuncController uc = (UserFuncController)session.getAttribute("userCtr");
 	String fname =request.getParameter("FirstName");
 	String lname =request.getParameter("LastName");
@@ -11,6 +10,6 @@
 	if(editComplete == true){
 		response.sendRedirect("User_menu.jsp");}
 	else{
-		response.sendRedirect("Manage_myprofile.jsp?Error=1AlreadyExistingUserOrIncorrectInputs");
+		response.sendRedirect("User_menu.jsp?Error=1AlreadyExistingUserOrIncorrectInputs");
 	}
 %>

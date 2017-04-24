@@ -5,9 +5,11 @@
 package cmc.mario.controllers;
 import java.io.*;
 
+
 import java.util.*;
 
 import cmc.mario.entities.Account;
+import cmc.mario.entities.User;
 import cmc.mario.entities.Admin;
 import cmc.mario.entities.University;
 /**
@@ -75,7 +77,7 @@ public AdminFuncController(Admin adm, DBController dbContr) {
    * 
    * @return user including personal profile
    */ 
-  public Account viewSpecificUser(String username){
+  public User viewSpecificUser(String username){
     return this.dbContr.getSpecificUser(username);
   }
   /**

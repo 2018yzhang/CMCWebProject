@@ -24,14 +24,14 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">First Name<br>
 </td>
-<td style="vertical-align: top;"><input name="FirstName"><br>
+<td style="vertical-align: top;"><input name="FirstName" value=<%=user.getFirstName()%>><br>
 </td>
 </tr>
 <tr>
 <tr>
 <td style="vertical-align: top;">Last Name<br>
 </td>
-<td style="vertical-align: top;"><input name="LastName"><br>
+<td style="vertical-align: top;"><input name="LastName" value=<%=user.getLastName()%>><br>
 </td>
 </tr>
 <tr>
@@ -42,7 +42,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Password<br>
 </td>
-<td style="vertical-align: top;"><input name="Password"> </td>
+<td style="vertical-align: top;"><input name="Password" value=<%=user.getPassword()%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Type<br>

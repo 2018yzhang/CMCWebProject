@@ -12,8 +12,8 @@
 <body>
 <br>
 <a href="Search_schools.jsp">Search for Schools</a><br>
-<a href="Manage_savedschoolspage.jsp">Manage My Saved Schools</a><br>
-<a href="Manage_myprofile.jsp">Manage My Profile</a><br>
+<a href="Manage_savedschoolspageUser.jsp">Manage My Saved Schools</a><br>
+<a href="Manage_myprofileUser.jsp">Manage My Profile</a><br>
 </body>
 </html>
 

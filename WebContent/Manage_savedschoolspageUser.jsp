@@ -4,33 +4,38 @@
 <title></title>
 </head>
 <%
-	DBController db = (DBController)session.getAttribute("ui");
-	out.print("View/Edit user profile");
+	AccountUI ui = (AccountUI)session.getAttribute("ui");
+	AccountController acctCtr = ui.getAccountController();
+	User user = (User)acctCtr.getAcct();
+	UserFuncController userCtr = new UserFuncController(user);
 	String anyErrors = request.getParameter("Error");
-	if (anyErrors!=null&&anyErrors.equals("1"))
-	out.print("Unable to edit user");
-	List<University> univList = db.getUniversities();
+	
+	session.setAttribute("userCtr", userCtr );
+	List<University> univList = userCtr.viewSavedSchools();
 %>
 <body>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
 <tr>
+<td top;><br>
+</td>
 <td style="vertical-align: center;">School<br>
 </td>
+</tr>
 <tr>
          	<% for(int c = 0; c < univList.size();c++){  %>
          	<td style="vertical-align: top;">
-<form method="post" action="Remove_school.jsp" name="Remove">
+<form method="post" action="Remove_schoolactionUser.jsp" name="Remove">
     <input name="Remove" value="Remove" type="submit">
-    <input name="Username" value="???" type="hidden">
+    <input name="Username" value=<%=user.getUsername()%> type="hidden">
 </form>
 </td>
                <td><%=univList.get(c).getSchoolName()%></td>
                 <td style="vertical-align: top;">
-<form method="post" action="View_specificschool.jsp" name="ViewSpecificSchool">
-    <input name="ViewSpecificSchool" value="ViewSpecificSchool" type="submit">
-    <input name="Username" value="???" type="hidden">
+<form method="post" action="View_savedschooldetailsactionUser.jsp" name="ViewSavedSchoolDetails">
+	<input name="ViewSavedSchoolDetails" value="View Saved School" type="submit">
+    <input name="SchoolName" value=<%=univList.get(c).getSchoolName()%> type="hidden">
 </form>
 </td>
 </tr>
