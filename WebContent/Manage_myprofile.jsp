@@ -5,12 +5,19 @@
 </head>
 <%
 	out.print("View/Edit user profile");
+	AccountUI ui = (AccountUI)session.getAttribute("ui");
+	AccountController acctCtr = ui.getAccountController();
+	User user = (User)acctCtr.getAcct();
+	UserFuncController userCtr = new UserFuncController(user);
 	String anyErrors = request.getParameter("Error");
-	if (anyErrors!=null&&anyErrors.equals("1"))
-	out.print("Unable to edit user");
+	if (anyErrors!=null&&anyErrors.equals("1")){
+	out.print("Unable to edit user");}
+	
+	session.setAttribute("userCtr", userCtr );
+
 %>
 <body>
-<form method="post" action="Edit_action.jsp" name="editUser"><br>
+<form method="post" action="EditPersonalProfile_action.jsp" name="editUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
@@ -30,7 +37,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Username" value= "Username" readonly> </td>
+<td style="vertical-align: top;"><input value=<%=user.getUsername()%> readonly></td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
@@ -40,7 +47,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
-<td style="vertical-align: top;"><input name="Type" readonly> </td>
+<td style="vertical-align: top;"><input value=<%=ui.typeOfUser(user.getUsername())%> readonly> </td>
 </tr>
 
 <tr>

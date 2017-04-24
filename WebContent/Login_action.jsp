@@ -11,16 +11,16 @@
 	}
 	else if(k==1){
 		session.setAttribute("ui", acctU );
-		response.sendRedirect("User_Menu.jsp");
+		response.sendRedirect("User_menu.jsp");
 	}
 	else if(k==2){
-		response.sendRedirect("index.jsp?Error=1FailedForDeactiveAccount");
+		response.sendRedirect("Login.jsp?Error=1FailedForDeactiveAccount");
 		
 	}
 	else if (k==3){
-		response.sendRedirect("index.jsp?Error=2FailedForInvalidPassword");
+		response.sendRedirect("Login.jsp?Error=2FailedForInvalidPassword");
 	}
 	else{
-		response.sendRedirect("index.jsp?Error=3FailedForUsername");
+		response.sendRedirect("Login.jsp?Error=3FailedForUsername");
 	}
 %>

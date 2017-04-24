@@ -1,19 +1,15 @@
-<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*",java.util.*"%>
+<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <%
 	DBController db = new DBController();
-	AccountUI ui = (AccountUI)session.getAttribute("ui");
-	AccountController acctCtr = ui.getAccountController();
-	Account acct = acctCtr.getAcct();
+	UserFuncController uc = (UserFuncController)session.getAttribute("userCtr");
 	String fname =request.getParameter("FirstName");
 	String lname =request.getParameter("LastName");
-	String uname = acct.getUsername();
+	String uname =uc.getUser().getUsername();
 	String password =request.getParameter("Password");
-	char type = ui.typeOfUser(uname);
-	char status = acct.getStatus();
 
-	boolean editComplete = db.editUser(fname, lname, uname, password, type, status);
+	boolean editComplete = uc.editPersonalProfile(uname, fname, lname, password);
 	if(editComplete == true){
-		response.sendRedirect("Manage_myprofile.jsp");}
+		response.sendRedirect("User_menu.jsp");}
 	else{
 		response.sendRedirect("Manage_myprofile.jsp?Error=1AlreadyExistingUserOrIncorrectInputs");
 	}
