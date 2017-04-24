@@ -30,7 +30,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Username" readonly> </td>
+<td style="vertical-align: top;"><input name="Username" value= "Username" readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
