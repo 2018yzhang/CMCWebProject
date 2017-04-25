@@ -4,7 +4,9 @@ import ="java.util.*"%>
 %>
 <html>
 <head>
-
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <title>Manage Universities  Form</title>
 </head>
 <body>

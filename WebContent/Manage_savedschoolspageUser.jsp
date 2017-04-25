@@ -13,6 +13,9 @@
 	List<University> univList = userCtr.viewSavedSchools();
 %>
 <body>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <table style="text-align: left; width: 400px; height: 300px;"
 border="1" >
 <tbody>
@@ -56,6 +59,7 @@ border="1" >
 </tr>
 <% } 
             %>
+           
 </tbody>
 </table>
 <br>

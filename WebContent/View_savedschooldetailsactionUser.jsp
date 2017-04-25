@@ -14,6 +14,9 @@
 	session.setAttribute("userCtr", userCtr );
 %>
 <body>
+   <form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <table style="text-align: left; width: 500px; height: 350px;"
 border="1" >
 <tbody>

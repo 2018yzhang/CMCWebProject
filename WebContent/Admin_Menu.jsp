@@ -7,6 +7,10 @@
 <title>Menu List</title>
 </head>
 <body>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
+<br>
 <a href="ViewUniversities.jsp">Manage University</a> <br>
 <a href="manage_Users.jsp">Manage Users</a> <br>
 <% AccountUI ui = (AccountUI)session.getAttribute("ui");

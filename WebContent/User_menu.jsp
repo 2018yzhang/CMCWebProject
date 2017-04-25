@@ -3,6 +3,9 @@
 <head>
 <title></title>
 </head>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <%
 	AccountUI ui = (AccountUI)session.getAttribute("ui");
 	AccountController acctCtr = ui.getAccountController();

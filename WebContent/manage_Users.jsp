@@ -7,6 +7,9 @@
 	AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
 
 %>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <td colspan="8" rowspan="1"><a
 href="Admin_Menu.jsp">Go Back To Main Menu</a>
 <body>

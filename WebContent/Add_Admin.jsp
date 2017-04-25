@@ -4,6 +4,9 @@
 <title>Add User Form</title>
 </head>
 <body>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <br>
 Add User form:<br>
 <br>

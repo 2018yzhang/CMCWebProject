@@ -4,6 +4,9 @@
 <title>Add Unviersity Admin Form</title>
 </head>
 <body>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
 <br>
 Add University Admin form:<br>
 <br>
