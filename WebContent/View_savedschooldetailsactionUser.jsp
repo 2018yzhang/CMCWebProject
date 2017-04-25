@@ -11,116 +11,101 @@
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1"))
 		out.print("Unable to view school");
-	
 	session.setAttribute("userCtr", userCtr );
-	String schoolName = request.getParameter("SchoolName");
-	University univ = userCtr.viewSpecificSchool(schoolName);
 %>
 <body>
-<table style="text-align: left; width: 266px; height: 228px;"
+<table style="text-align: left; width: 500px; height: 350px;"
 border="1" >
 <tbody>
 <tr>
 <td style="vertical-align: top;">SCHOOL<br>
 </td>
-<td style="vertical-align: top;"><input name="SchoolName" value=<%=univ.getSchoolName()%> readonly>
-</td>
+<td style="vertical-align: top;"><input name="SchoolName" style="width: 550px"; value=<%=request.getParameter("SchoolName")%> readonly></td>
 </tr>
 <tr>
 <tr>
 <td style="vertical-align: top;">STATE<br>
 </td>
-<td style="vertical-align: top;"><input name="State" value=<%=univ.getState()%> readonly>
+<td style="vertical-align: top;"><input name="State" style="width: 250px";  value=<%=request.getParameter("State")%> readonly>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">LOCATION<br>
 </td>
-<td style="vertical-align: top;"><input value=<%=univ.getLocation()%> readonly></td>
+<td style="vertical-align: top;"><input name = "Location" style="width: 250px"; value=<%=request.getParameter("Location")%> readonly></td>
 </tr>
 <tr>
 <td style="vertical-align: top;">CONTROL<br>
 </td>
-<td style="vertical-align: top;"><input name="Password" value=<%=univ.getControl()%> readonly> </td>
+<td style="vertical-align: top;"><input name="Control" style="width: 250px";  value=<%=request.getParameter("Control")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">NUMBER OF STUDENTS<br>
 </td>
-<td style="vertical-align: top;"><input name="NumberOfStudents" value=<%=univ.getNumOfStu()%> readonly> </td>
+<td style="vertical-align: top;"><input name="NumberOfStudents" style="width: 250px";  value=<%=request.getParameter("NumberOfStudents")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% FEMALE<br>
 </td>
-<td style="vertical-align: top;"><input name= "Female" value=<%=univ.getPerFem()%> readonly> </td>
+<td style="vertical-align: top;"><input name= "Female"  style="width: 250px";  value=<%=request.getParameter("FemalePercent")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT VERBAL<br>
 </td>
-<td style="vertical-align: top;"><input name="SATVerbal" value=<%=univ.getSatVerbal()%> readonly> </td>
+<td style="vertical-align: top;"><input name="SATVerbal"  style="width: 250px";  value=<%=request.getParameter("SatVerbal")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT MATH<br>
 </td>
-<td style="vertical-align: top;"><input name="SATMath" value=<%=univ.getSatMath()%> readonly> </td>
+<td style="vertical-align: top;"><input name="SATMath" style="width: 250px";  value=<%=request.getParameter("SatMath")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">EXPENSES<br>
 </td>
-<td style="vertical-align: top;"><input name="Expenses" value=<%=univ.getPrice()%> readonly> </td>
+<td style="vertical-align: top;"><input name="Expenses" style="width: 250px";  value=<%=request.getParameter("Expenses")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% FINANCIAL AID<br>
 </td>
-<td style="vertical-align: top;"><input name="FinacialAid" value=<%=univ.getFinAid()%> readonly> </td>
+<td style="vertical-align: top;"><input name="FinacialAid" style="width: 250px";  value=<%=request.getParameter("FinAid")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">NUMBER OF APPLICANTS<br>
 </td>
-<td style="vertical-align: top;"><input name="NumberApplicants" value=<%=univ.getNumOfApp()%> readonly> </td>
+<td style="vertical-align: top;"><input name="NumberApplicants" style="width: 250px";  value=<%=request.getParameter("NumApp")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% ADMITTED<br>
 </td>
-<td style="vertical-align: top;"><input name="Admitted" value=<%=univ.getPerAdmit()%> readonly> </td>
+<td style="vertical-align: top;"><input name="Admitted" style="width: 250px";  value=<%=request.getParameter("PerAdmit")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% ENROLLED<br>
 </td>
-<td style="vertical-align: top;"><input name="Enrolled" value=<%=univ.getPerEnroll()%> readonly> </td>
+<td style="vertical-align: top;"><input name="Enrolled" style="width: 250px";  value=<%=request.getParameter("PerEnroll")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">ACADEMICS SCALE (1-5)<br>
 </td>
-<td style="vertical-align: top;"><input name="AcademicScale" value=<%=univ.getAcademicScale()%> readonly> </td>
+<td style="vertical-align: top;"><input name="AcademicScale" style="width: 250px";  value=<%=request.getParameter("AcademicScale")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SOCIAL SCALE (1-5)<br>
 </td>
-<td style="vertical-align: top;"><input name="SocialScale" value=<%=univ.getSocialScale()%> readonly> </td>
+<td style="vertical-align: top;"><input name="SocialScale" style="width: 250px";  value=<%=request.getParameter("SocialScale")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">QUALITY OF LIFE SCALE (1-5)<br>
 </td>
-<td style="vertical-align: top;"><input name="LifeScale" value=<%=univ.getLifeScale()%> readonly> </td>
+<td style="vertical-align: top;"><input name="LifeScale"  style="width: 250px";  value=<%=request.getParameter("LifeScale")%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">EMPHASES<br>
 </td>
-<td style="vertical-align: top;"><input name="Emphases" value=
-<% 
-	List<String> listPop = univ.getPopMajors();
-	for(int c = 0; c < listPop.size(); c++){
-		listPop.get(c);
-	}
-%> readonly> </td>
+<td style="vertical-align: top;"><input name="Emphases" style="width: 250px";  value=<%=request.getParameter("PopMajors")%> readonly>  
+</td>
 </tr>
 
-<tr>
-<td style="vertical-align: top;"><input value="Edit"
-name="Edit" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td style="vertical-align: top;"><input value="Reset"
-name="Reset" type="reset"></td>
-</tr>
 </tbody>
 </table>
 <br>
