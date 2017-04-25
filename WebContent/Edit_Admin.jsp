@@ -8,11 +8,11 @@
 	out.print("View/Edit profile");
 	AdminFuncController ac = (AdminFuncController)session.getAttribute("uc");
 	String uname = request.getParameter("Username");
-	Account a =ac.viewSpecificUser(uname);
-	if(a==null){
-		response.sendRedirect("Edit_Admin.jsp?Error=1AlreadyExistingUserOrIncorrectInputs");
-	}
-	session.setAttribute("a", a );
+	String fname = request.getParameter("Firstname");
+	String lname = request.getParameter("Lastname");
+	String password = request.getParameter("Password");
+	char type = request.getParameter("Type").charAt(0);
+	char status = request.getParameter("Status").charAt(0);
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1")){
 	out.print("Unable to edit user");}
@@ -27,35 +27,35 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">First Name<br>
 </td>
-<td style="vertical-align: top;"><input name="FirstName"><br>
+<td style="vertical-align: top;"><input name="FirstName" value=<%=fname%>><br>
 </td>
 </tr>
 <tr>
 <tr>
 <td style="vertical-align: top;">Last Name<br>
 </td>
-<td style="vertical-align: top;"><input name="LastName"><br>
+<td style="vertical-align: top;"><input name="LastName" value=<%=lname%>><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input value=<%=a.getUsername()%> readonly></td>
+<td style="vertical-align: top;"><input name = "Username" value=<%=uname%> readonly></td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
 </td>
-<td style="vertical-align: top;"><input name="Password"> </td>
+<td style="vertical-align: top;"><input name="Password" value=<%=password%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
-<td style="vertical-align: top;"><input value="Type"> </td>
+<td style="vertical-align: top;"><input name="Type" value=<%=type%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Status<br>
 </td>
-<td style="vertical-align: top;"><input value="Status"> </td>
+<td style="vertical-align: top;"><input name="Status" value=<%=status%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;"><input value="Edit"

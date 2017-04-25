@@ -234,8 +234,10 @@ public boolean addUser(String firstName, String lastName, String username, Strin
    * @return account to return
    */
   public User getSpecificUser(String username){
-	  String[][] userList =univLib.user_getUsers();
 	  User a = new User();
+	  try{
+	  String[][] userList =univLib.user_getUsers();
+	  
 	  for(String[] arr : userList){
 		  if(arr[2].equals(username)){
 	    	a.setFirstName(arr[0]);
@@ -247,6 +249,10 @@ public boolean addUser(String firstName, String lastName, String username, Strin
 	  }
 	  }
 	  return a;
+	  }catch(Exception e){
+		    e.printStackTrace();
+			return a;
+	  }
   }
 
   

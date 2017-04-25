@@ -1,4 +1,4 @@
-<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
+<%@page import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <html>
 <head>
 <title></title>
@@ -48,8 +48,12 @@ Edit</td>
          	<td style="vertical-align: top;">
 <form method="post" action="Edit_Admin.jsp" name="Edit">
     <input name="Edit" value="Edit" type="submit">
-    <%String uname = usrList.get(c).getUsername(); %>
-    <input name="Username" value=uname type="hidden">
+    <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
+    <input name="Firstname" value="<%= usrList.get(c).getFirstName()%>" type="hidden">
+    <input name="Lastname" value="<%= usrList.get(c).getLastName()%>" type="hidden">
+    <input name="Password" value="<%=usrList.get(c).getPassword()%>" type="hidden">
+    <input name="Type" value="<%= usrList.get(c).getTypeOfUser()%>" type="hidden">
+    <input name="Status" value="<%= usrList.get(c).getStatus()%>" type="hidden">
 </form>
 </td>
                <td><%=usrList.get(c).getFirstName()%></td>
@@ -61,7 +65,7 @@ Edit</td>
                 <td style="vertical-align: top;">
 <form method="post" action="Deactive_Admin.jsp" name="Deactive">
     <input name="Deactive" value="Deactive" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input name="Username" value="???" type="hidden">
+    <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
 </form>
 </td>
                 </tr>

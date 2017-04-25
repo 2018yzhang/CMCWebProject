@@ -4,7 +4,7 @@
 	AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
 	String fname =request.getParameter("FirstName");
 	String lname =request.getParameter("LastName");
-	String uname = a.getUsername();
+	String uname = request.getParameter("Username");
 	String password =request.getParameter("Password");
 	char type = request.getParameter("Type").charAt(0);
 	char status = request.getParameter("Status").charAt(0);

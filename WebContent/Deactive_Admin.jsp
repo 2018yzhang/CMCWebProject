@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<tr>
+          <td style="padding: 10px;"> 
+            <input type="submit" name="operation" value="View Basket">
+            <input type="submit" name="operation" value="Remove Basket" onClick="checkIt()">
+          </td>
+          <td style="padding: 10px;">
+            <input type="submit" name="operation" value="Add New Basket">
+            <input type="submit" name="operation" value="Change Selected Basket's Name">
+          </td>
+        </tr>
 </body>
 </html>
