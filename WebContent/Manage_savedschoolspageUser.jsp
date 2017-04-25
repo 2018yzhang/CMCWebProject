@@ -51,6 +51,7 @@ border="1" >
        <input name="PerAdmit" value=<%=univList.get(c).getPerAdmit()%> type="hidden">
        <input name="PerEnroll" value=<%=univList.get(c).getPerEnroll()%> type="hidden">
        <input name="AcademicScale" value=<%=univList.get(c).getAcademicScale()%> type="hidden">
+       <input name="SocialScale" value=<%=univList.get(c).getSocialScale()%> type="hidden">
        <input name="LifeScale" value=<%=univList.get(c).getLifeScale()%> type="hidden">
 		<input name="PopMajors" value=<%=univList.get(c).getPopMajors()%> type="hidden">
        
