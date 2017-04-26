@@ -1,4 +1,4 @@
-<%@page import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
+<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <html>
 <head>
 <title></title>
@@ -63,10 +63,27 @@ Edit</td>
                 <td><%=usrList.get(c).getTypeOfUser()%></td>
                 <td><%=usrList.get(c).getStatus()%></td>
                 <td style="vertical-align: top;">
-<form method="post" action="Deactive_Admin.jsp" name="Deactive">
-    <input name="Deactive" value="Deactive" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script type="text/javascript">
+
+function sub1(){
+    var r = confirm('Are you sure you want to deactive this user?');
+    if(r==true){
+    	 var f = document.Deactive;
+    	 f.method = "post";
+    	 f.action="Deactive_Admin.jsp";
+    	 f.submit();
+    }
+    else{
+    	
+    }
+}
+</script>
+<form method="post" name="Deactive" action="Deactive_Admin.jsp" onclick="sub1();" >
+      <input name="Deactive" value="Deactive" type="submit">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
+   
 </form>
+
 </td>
                 </tr>
             <% } 

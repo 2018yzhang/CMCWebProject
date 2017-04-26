@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,15 +7,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<tr>
-          <td style="padding: 10px;"> 
-            <input type="submit" name="operation" value="View Basket">
-            <input type="submit" name="operation" value="Remove Basket" onClick="checkIt()">
-          </td>
-          <td style="padding: 10px;">
-            <input type="submit" name="operation" value="Add New Basket">
-            <input type="submit" name="operation" value="Change Selected Basket's Name">
-          </td>
-        </tr>
+	<% 
+	 String uname = request.getParameter("Username");
+	 AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
+	 boolean r = ac.deactivateUser(uname);
+	 String msg ="";
+	 if(r==true){
+		 response.sendRedirect("manage_Users.jsp");
+	 }
+	 else{
+		 out.println("<script type=\"text/javascript\">");
+		   out.println("alert('Deactive Error');");
+		   out.println("window.location='manage_Users.jsp';");
+		   out.println("</script>");
+	 }
+	%>
+	
+    
+   
 </body>
 </html>
