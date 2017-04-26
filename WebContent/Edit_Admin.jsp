@@ -20,6 +20,10 @@
 
 %>
 <body>
+<form method="post" action="LogOff.jsp" name="LogOff">
+    <input name="Logout" type="submit" value="Logout">
+</form>
+<br>
 <form method="post" action="Edit_Action_Admin.jsp" name="editUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >

@@ -447,18 +447,29 @@ public class University {
 	 * Get emphases majors of a school
 	 * @return a list of popular majors the school offers
 	 */
-	public List<String> getPopMajors() {
+//	public List<String> getPopMajors() {
+//		UniversityDBLibrary u = new UniversityDBLibrary("mariop4", "mariop4", "csci230");
+//		String[][] uniE = u.university_getNamesWithEmphases();
+//		List<String> emphasesList = new ArrayList<String>();
+//		for(String[] em: uniE){
+//			if(em[0].equals(schoolName)){
+//				for(int i =1; i<em.length; i++){
+//					emphasesList.add(em[i]);
+//				}
+//			}
+//		}
+//		return emphasesList;
+//	}
+	public String getPopMajors() {
 		UniversityDBLibrary u = new UniversityDBLibrary("mariop4", "mariop4", "csci230");
 		String[][] uniE = u.university_getNamesWithEmphases();
-		List<String> emphasesList = new ArrayList<String>();
+		String emphasis = "";
 		for(String[] em: uniE){
 			if(em[0].equals(schoolName)){
-				for(int i =1; i<em.length; i++){
-					emphasesList.add(em[i]);
+				emphasis = em[1];
 				}
 			}
-		}
-		return emphasesList;
+		return emphasis;
 	}
 
 	/**
