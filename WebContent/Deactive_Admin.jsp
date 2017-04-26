@@ -16,7 +16,7 @@
 		 response.sendRedirect("manage_Users.jsp");
 	 }
 	 else{
-		 out.println("<script type=\"text/javascript\">");
+		   out.println("<script type=\"text/javascript\">");
 		   out.println("alert('Deactive Error');");
 		   out.println("window.location='manage_Users.jsp';");
 		   out.println("</script>");

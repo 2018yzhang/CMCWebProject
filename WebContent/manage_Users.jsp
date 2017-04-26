@@ -66,27 +66,12 @@ Edit</td>
                 <td><%=usrList.get(c).getTypeOfUser()%></td>
                 <td><%=usrList.get(c).getStatus()%></td>
                 <td style="vertical-align: top;">
-<script type="text/javascript">
 
-function sub1(){
-    var r = confirm('Are you sure you want to deactive this user?');
-    if(r==true){
-    	 var f = document.Deactive;
-    	 f.method = "post";
-    	 f.action="Deactive_Admin.jsp";
-    	 f.submit();
-    }
-    else{
-    	
-    }
-}
-</script>
-<form method="post" name="Deactive" action="Deactive_Admin.jsp" onclick="sub1();" >
-      <input name="Deactive" value="Deactive" type="submit">
+<form >
+      <input name="Deactive" value="Deactive" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='Deactive_Admin.jsp'; } else { return false; }">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
    
 </form>
-
 </td>
                 </tr>
             <% } 
