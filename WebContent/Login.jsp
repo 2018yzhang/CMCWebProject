@@ -3,10 +3,9 @@
 
 <title>Login Form</title>
 </head>
-<body>
+<body style="background-color:powderblue;">
 <br>
-Login form:<br>
-<br>
+Welcome to Choose My College User!<br><br>Login:<br>
 <%
 String anyErrors = request.getParameter("Error");
 
@@ -18,7 +17,7 @@ else if (anyErrors!=null&&anyErrors.equals("4"))
 	out.print("Hello, the username is incorrect");
 %>
 <form method="post" action="Login_action.jsp" name="Login"><br>
-<table style="text-align: left; width: 266px; height: 228px;"
+<table style="text-align: left; width: 266px; height: 228px; background-color: white;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
