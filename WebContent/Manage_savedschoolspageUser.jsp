@@ -13,10 +13,12 @@
 	List<University> univList = userCtr.viewSavedSchools();
 %>
 <body>
+<a href="User_menu.jsp">Go Back To Main Menu</a>
+<br>
 <form method="post" action="LogOff.jsp" name="LogOff">
     <input name="Logout" type="submit" value="Logout">
 </form>
-<table style="text-align: left; width: 400px; height: 300px;"
+<table style="text-align: left; width: 1000px; height: 300px;"
 border="1" >
 <tbody>
 <tr>
@@ -28,16 +30,16 @@ border="1" >
 <tr>
          	<% for(int c = 0; c < univList.size();c++){  %>
          	<td style="vertical-align: top;">
-<form method="post" action="Remove_savedschoolUser.jsp" name="Remove">
-    <input name="Remove" value="Remove" type="submit">
-     <input name="SchoolName" value=<%=univList.get(c).getSchoolName()%> type="hidden">
+<form method="post" action="Remove_savedschool.jsp" name="Remove">
+    <input name="Remove" value="Remove from Saved Schools List" type="submit">
+    <input name="School" SIZE="60" value="<%=univList.get(c).getSchoolName()%>" type="hidden">
 </form>
 </td>
                <td><%=univList.get(c).getSchoolName()%></td>
                 <td style="vertical-align: top;">
 <form method="post" action="View_savedschooldetailsactionUser.jsp" name="ViewSavedSchoolDetails">
 	<input name="ViewSavedSchoolDetails" value="View Saved School" type="submit">
-    <input name="SchoolName" value=<%=univList.get(c).getSchoolName()%> type="hidden" >
+  	<input name="SchoolName" value="<%=univList.get(c).getSchoolName()%>" type="hidden" >
      <input name="State" value=<%=univList.get(c).getState()%> type="hidden">
       <input name="Location" value=<%=univList.get(c).getLocation()%> type="hidden">
        <input name="Control" value=<%=univList.get(c).getControl()%> type="hidden">

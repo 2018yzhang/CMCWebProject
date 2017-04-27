@@ -6,16 +6,14 @@
 <form method="post" action="LogOff.jsp" name="LogOff">
     <input name="Logout" type="submit" value="Logout">
 </form>
+<a href="User_menu.jsp">Go Back To Main Menu</a>
+<br>
 <%
 	out.print("View/Edit user profile");
 	AccountUI ui = (AccountUI)session.getAttribute("ui");
 	AccountController acctCtr = ui.getAccountController();
 	User user = (User)acctCtr.getAcct();
 	UserFuncController userCtr = new UserFuncController(user);
-	String anyErrors = request.getParameter("Error");
-	if (anyErrors!=null&&anyErrors.equals("1")){
-	out.print("Unable to edit user");}
-	
 	session.setAttribute("userCtr", userCtr );
 
 %>
