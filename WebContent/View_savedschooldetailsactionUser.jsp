@@ -8,10 +8,10 @@
 	AccountController acctCtr = ui.getAccountController();
 	User user = (User)acctCtr.getAcct();
 	UserFuncController userCtr = new UserFuncController(user);
+	session.setAttribute("userCtr", userCtr );
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1"))
 		out.print("Unable to view school");
-	session.setAttribute("userCtr", userCtr );
 %>
 <body>
    <form method="post" action="LogOff.jsp" name="LogOff">
@@ -23,7 +23,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">SCHOOL<br>
 </td>
-<td style="vertical-align: top;"><input name="SchoolName" style="width: 550px"; value=<%=request.getParameter("SchoolName")%> readonly></td>
+<td style="vertical-align: top;"><input name="SchoolName" SIZE="60" style="width: 250px"; value="<%=request.getParameter("SchoolName")%>" readonly></td>
 </tr>
 <tr>
 <tr>

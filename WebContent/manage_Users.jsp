@@ -68,7 +68,7 @@ Edit</td>
                 <td style="vertical-align: top;">
 
 <form >
-      <input name="Deactive" value="Deactive" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='Deactive_Admin.jsp'; } else { return false; }">
+      <input name="Deactive" value="Deactivate" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='Deactive_Admin.jsp'; } else { return false; }">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
    
 </form>

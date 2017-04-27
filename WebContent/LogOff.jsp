@@ -4,6 +4,7 @@
 	HttpSession s = request.getSession(false);
 	if(session != null)
    		session.invalidate();
-		request.getRequestDispatcher("Login.jsp").forward(request,response);
+		request.getRequestDispatcher("LogOff_action.jsp").forward(request,response);
+		
 %>
 
