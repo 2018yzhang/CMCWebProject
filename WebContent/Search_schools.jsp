@@ -11,7 +11,7 @@
     <input name="Logout" type="submit" value="Logout">
 </form>
 <form action="search_action.jsp" name="SearchForSchools">
-<div style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+<div style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 style="font-family: URW Chancery L;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <big style="font-weight: bold;"><big><big>Search Menu</big></big></big></span><br>
 </div>
@@ -44,64 +44,64 @@ name="schoolname"><br>
 </tr>
 <tr>
 <td style="vertical-align: top;">by NUMBER OF STUDENTS </td>
-<td style="vertical-align: top;">between <input
-name="numStuMin"> and <input name="numStuMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="numStuMin"> and <input value="-1" name="numStuMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by % FEMALE </td>
-<td style="vertical-align: top;">between <input
-name="numFemMin"> and <input name="numFemMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="numFemMin"> and <input value="-1" name="numFemMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by SAT VERBAL&nbsp; </td>
-<td style="vertical-align: top;">between <input
-name="satVerbMin"> and <input name="satVerbMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="satVerbMin"> and <input value="-1" name="satVerbMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by SAT MATH&nbsp; </td>
-<td style="vertical-align: top;">between <input
-name="satMathMin"> and <input name="satMathMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="satMathMin"> and <input value="-1" name="satMathMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by EXPENSES </td>
-<td style="vertical-align: top;">between <input name="expMin">
-and <input name="expMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="expMin"> and <input value="-1" name="expMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by % FINANCIAL AID </td>
-<td style="vertical-align: top;">between <input
-name="finAidMin"> and <input name="finAidMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="finAidMin"> and <input value="-1" name="finAidMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by NUMBER OF APPLICANTS&nbsp; </td>
-<td style="vertical-align: top;">between <input name="appMin">
-and <input name="appMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="appMin"> and <input value="-1" name="appMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by % ADMITTED </td>
-<td style="vertical-align: top;">between <input name="admitMin">
-and <input name="admitMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="admitMin"> and <input value="-1" name="admitMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by % ENROLLED </td>
-<td style="vertical-align: top;">between <input
-name="enrollMin"> and <input name="enrollMax"> </td>
+<td style="vertical-align: top;">between <input value="-1"
+name="enrollMin"> and <input value="-1" name="enrollMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by ACADEMICS SCALE (1-5) </td>
-<td style="vertical-align: top;">between <input
-name="aScaleMin"> and <input name="aScaleMax"> </td>
+<td style="vertical-align: top;">between <input value="-1.0"
+name="aScaleMin"> and <input value="-1.0" name="aScaleMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by SOCIAL SCALE (1-5) </td>
-<td style="vertical-align: top;">between <input
-name="socScaleMin"> and <input name="socScaleMax"> </td>
+<td style="vertical-align: top;">between <input value="-1.0"
+name="socScaleMin"> and <input value="-1.0" name="socScaleMax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by QUALITY OF LIFE SCALE (1-5)
 </td>
-<td style="vertical-align: top;">between <input
-name="qScaleMin"> and <input name="qScaleMiax"> </td>
+<td style="vertical-align: top;">between <input value="-1.0"
+name="qScaleMin"> and <input value="-1.0" name="qScaleMiax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by EMPHASES </td>
