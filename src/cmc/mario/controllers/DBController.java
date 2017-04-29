@@ -68,24 +68,29 @@ public class DBController {
  * @return true if add successfully
  */
 public int addUser(String firstName, String lastName, String username, String password, char type){
-	int error=1;
+	int error=4;
 	  Account a = this.getSpecificUser(username);
 	  if(a.getUsername()!=null){
 		  error=2;
+		  throw new IllegalArgumentException("Excisted Username!");
 	  }
 	  else{
 		  int i=1;
 		  if(type=='a'){
 			i=  univLib.user_addUser(firstName, lastName, username, password, 'a');
+			error=0;
 		  }
 		  else if(type=='u'){
 			i=  univLib.user_addUser(firstName, lastName, username, password, 'u');
+			error=1;
 		  }
 		  else{
 			  error=3;
+			  throw new IllegalArgumentException("Input Invaliad For Type Of User!");
 		  }
 		  if(!(i==1)){
 			   error=4;
+			   throw new IllegalArgumentException("Unknown Error!");
 		  }
 		  error=i;
 	  }
@@ -101,16 +106,37 @@ public int addUser(String firstName, String lastName, String username, String pa
    * @param status the status of the user, if active or not
    * @return true if edit successfully
    */
-  public boolean editUser(String firstName, String lastName, String username, String password, char type, char status){
+  public int editUser(String firstName, String lastName, String username, String password, char type, char status){
+	  int error =4;
 	  Account a = this.getSpecificUser(username);
 	  if(a.getUsername()==null){
-		  return false;
+		  error=2;
+		  throw new IllegalArgumentException("Cannot find this account!");
 	  }	
-	  int i = univLib.user_editUser(username, firstName, lastName, password, type, status);
-	  if(!(i==1)){
-		  return false;
+	  else{
+	   int i =1;
+	   if(type=='a'||type=='u'){
+		if(status=='Y'||status=='N'){
+			i = univLib.user_editUser(username, firstName, lastName, password, type, status);
+			if(i==1){
+				error=i;
+			}
+			else{
+				error=4;
+				throw new IllegalArgumentException("Unknown Error!");
+			}
+		}
+		else{
+			error=0;
+			throw new IllegalArgumentException("Input Invaliad For Status!");
+		}
+			}
+	   else{
+		 error=3;
+		 throw new IllegalArgumentException("Input Invaliad For Type Of User!");
+	   }
 	  }
-	  return true;
+	  return error;
   }
   
   /**
@@ -125,8 +151,30 @@ public int addUser(String firstName, String lastName, String username, String pa
 		  return false;
 	  }
 	  a.setStatus('N');
-	  return this.editUser(a.getFirstName(), a.getLastName(), a.getUsername(), a.getPassword(), a.getTypeOfUser(), a.getStatus());
-	 
+	  int i = this.editUser(a.getFirstName(), a.getLastName(), a.getUsername(), a.getPassword(), a.getTypeOfUser(), a.getStatus());
+	 if(i!=1){
+		 return false;
+	 }
+	 return true;
+  }
+  
+  /**
+   * To deactivate user-admin only.
+   * @param username the username of the user to be deleted - Yidan
+   * @throws IllegalArgumentException if the account has already deactivated or it does not exist
+   * @return true if reactivate successfully
+   */
+  public boolean reactivateUser(String username){
+	  Account a = this.getSpecificUser(username);
+	  if(a.getFirstName()==null||a.getStatus()=='Y'){
+		  return false;
+	  }
+	  a.setStatus('Y');
+	  int i = this.editUser(a.getFirstName(), a.getLastName(), a.getUsername(), a.getPassword(), a.getTypeOfUser(), a.getStatus());
+	 if(i!=1){
+		 return false;
+	 }
+	 return true;
   }
   
   /**

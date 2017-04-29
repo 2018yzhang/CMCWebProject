@@ -69,7 +69,7 @@ public int addUser(String firstName, String lastName, String username, String pa
    * @param status which is new to update
    * @return true if administrator edit user information, othewise false
    */  
-  public boolean editUser(String firstName, String lastName, String username, String password, char type, char status){
+  public int editUser(String firstName, String lastName, String username, String password, char type, char status){
 	  return this.adContr.editUser(firstName, lastName,username, password, type, status);
 	  }
   /**
@@ -79,6 +79,14 @@ public int addUser(String firstName, String lastName, String username, String pa
    */ 
   public boolean deactivateUser(String username){
 	 return this.adContr.deactivateUser(username);
+  }
+  /**
+   * View a specific user profile including first name, last name, username, password, type, status
+   * @param userName of the user
+   * @return true if username is a reactivated user, otherwise false
+   */ 
+  public boolean reactivateUser(String username){
+	 return this.adContr.reactivateUser(username);
   }
   /**
    * View a list of all university containing all info of these universities
