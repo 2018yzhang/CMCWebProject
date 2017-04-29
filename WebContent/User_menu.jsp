@@ -75,9 +75,6 @@ margin-bottom:20px;
 <div class="content">
 <h2>Main Menu</h2>
 <ul class="a">
-<form method="post" action="LogOff.jsp" name="LogOff">
-    <input name="Logout" type="submit" value="Logout">
-</form>
 <%
 	AccountUI ui = (AccountUI)session.getAttribute("ui");
 	AccountController acctCtr = ui.getAccountController();
