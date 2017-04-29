@@ -25,12 +25,14 @@ for(int i =0; i<ayee.size();i++){
 		
 
 <tr>
-<td style="vertical-align: top;">save<br>
+<td style="vertical-align: top;"><form method="post" action="Save_school.jsp" name="Save"><input value="Save"
+name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></form>
 </td>
 <td style="vertical-align: top;"> <%=x.getSchoolName()%><br>
 </td>
 
-<td style="vertical-align: top;">view<br>
+<td style="vertical-align: top;"><form method="post" action="View_specificschool.jsp" name="View"><input value="View"
+name="View" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></form>
 </td>
 </tr>
 <%} %>
