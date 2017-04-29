@@ -10,6 +10,21 @@
 You have logged out successfully!
 <br>
 <a href="Login.jsp">Click</a> here to log back in.
+<%
+if (!IsPostBack)
+{
+    if (session.getAttribute("ui") == null)
+    {
+        response.redirect("Login.jsp");
+    }
+    else
+    {
+        response.clearHeaders();
+        response.addHeader("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate");
+        response.addHeader("Pragma", "no-cache");
+    }
+}
+%>
 
 </body>
 </html>

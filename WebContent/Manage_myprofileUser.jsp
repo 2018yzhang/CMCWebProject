@@ -9,11 +9,19 @@
 <a href="User_menu.jsp">Go Back To Main Menu</a>
 <br>
 <%
+	HttpSession s = request.getSession(false);
+	if(s == null) {
+		session.invalidate(); 
+		request.getRequestDispatcher("Security_error.jsp").forward(request,response);}
 	out.print("View/Edit user profile");
-
-	UserFuncController ui = (UserFuncController)request.getAttribute("userCtr");
+	UserFuncController ui = (UserFuncController)request.getSession().getAttribute("userCtr");
 	User user = ui.getUser();
-
+	
+// 	else if(session.getAttribute("loggedIn").equals("admin")) {
+// 	     response.sendRedirect("admin.jsp");
+// 	} else if(!session.getAttribute("loggedIn").equals("user")) {
+// 	     response.sendRedirect("index.jsp");
+// 	}
 %>
 <body>
 <form method="post" action="EditPersonalProfile_action.jsp" name="editUser"><br>
