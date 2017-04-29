@@ -4,8 +4,8 @@
 		 	int numMax=-1,numMin=-1,FemMin=-1,FemMax=-1,VerbMin=-1,VerbMax=-1,MathMin=-1,MathMax=-1,expenMin=-1,expenMax=-1,AidMin=-1,
 		 	AidMax=-1,apMin=-1,apMax=-1,admMin=-1,admMax=-1,enrMin=-1,enrMax=-1;
 		 	double aScalMin=-1.0,aScalMax=-1.0,socScalMin=-1.0,socScalMax=-1.0,qScalMin=-1.0,qScalMax=-1.0;
-	//		DBController dbc = new DBController();
-			UserFuncController uct = (UserFuncController)session.getAttribute("userCtr");
+//			DBController dbc = new DBController();
+			UserFuncController uct = (UserFuncController)request.getSession().getAttribute("userCtr");
 		
 			String schoolname = request.getParameter("schoolname");
 			

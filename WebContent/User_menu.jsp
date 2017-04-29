@@ -10,6 +10,8 @@
 	AccountUI ui = (AccountUI)session.getAttribute("ui");
 	AccountController acctCtr = ui.getAccountController();
 	User user = (User)acctCtr.getAcct();
+	UserFuncController userCtr = new UserFuncController(user);
+	session.setAttribute("userCtr", userCtr );
  	out.print("Hello User: "+user.getUsername());
 %>
 <body>

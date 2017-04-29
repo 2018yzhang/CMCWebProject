@@ -10,11 +10,9 @@
 <br>
 <%
 	out.print("View/Edit user profile");
-	AccountUI ui = (AccountUI)session.getAttribute("ui");
-	AccountController acctCtr = ui.getAccountController();
-	User user = (User)acctCtr.getAcct();
-	UserFuncController userCtr = new UserFuncController(user);
-	session.setAttribute("userCtr", userCtr );
+
+	UserFuncController ui = (UserFuncController)request.getAttribute("userCtr");
+	User user = ui.getUser();
 
 %>
 <body>
@@ -48,7 +46,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
-<td style="vertical-align: top;"><input value=<%=ui.typeOfUser(user.getUsername())%> readonly> </td>
+<td style="vertical-align: top;"><input value=<%=user.getTypeOfUser()%> readonly> </td>
 </tr>
 
 <tr>
