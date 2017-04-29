@@ -2,6 +2,81 @@
 <html>
 <head>
 <title></title>
+<style type="text/css">
+body{
+margin:0;
+padding:0;
+font-family:Titillium Web;
+
+color:black;
+background:#f3f3f3;
+}
+.container {
+    max-width:960px;
+    width:96%
+}
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+.logo{
+float:left;
+margin-top:10px;
+url:logo.PNG;
+}
+nav{
+float:right;
+line-height:70px;
+}
+nav li{
+display:inline-block;
+padding:5px 20px;
+margin-left:10px;
+background:#ff4719;
+line-height:normal;
+}
+nav li a{
+	color: white;
+	 text-decoration: none;
+}
+.content h2{
+color:black;
+background: #f1f1c1;
+padding:10px;
+border-radius:Spx;
+margin-bottom:20px;
+}
+
+.content ul {
+	list-style-position:outside;
+}
+.content ul a{
+ text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="container">
+<div class="logo">
+	<img src="welcome2.png" width="65" alt="" title="">
+</div>
+<nav>
+<li><a href="LogOff.jsp">Logout</a></li>
+</nav>
+<h1>Choose My College</h1>
+</div>
+</header>
+</head>
+<div class="container">
+<div class="content">
+<h2><a href="User_menu.jsp">Main Menu</a></h2>
+<tbody>
+<tr align="center">
 </head>
 <%
 	AccountUI ui = (AccountUI)session.getAttribute("ui");
@@ -14,9 +89,6 @@
 		out.print("Unable to view school");
 %>
 <body>
-   <form method="post" action="LogOff.jsp" name="LogOff">
-    <input name="Logout" type="submit" value="Logout">
-</form>
 
 <form method="post" action="Save_school.jsp" name="Save"><input value="Save"
 name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
