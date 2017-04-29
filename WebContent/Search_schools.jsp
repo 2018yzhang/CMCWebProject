@@ -7,6 +7,7 @@ body{
 margin:0;
 padding:0;
 font-family:Titillium Web;
+
 color:black;
 background:#f3f3f3;
 }
