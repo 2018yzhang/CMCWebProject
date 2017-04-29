@@ -65,7 +65,7 @@ public AdminFuncController(Admin adm, DBController dbContr) {
    * @param type the type of the user
    * @return true if add successful
    */
-  public boolean addUser(String firstName, String lastName, String username, String password,char type){
+  public int addUser(String firstName, String lastName, String username, String password,char type){
 	  return dbContr.addUser(firstName, lastName, username, password, type);
   }
   

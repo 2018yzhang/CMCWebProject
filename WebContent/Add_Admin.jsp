@@ -9,6 +9,7 @@
 </form>
 <br>
 Add User form:<br>
+
 <br>
 <form method="post" action="Add_action_Admin.jsp" name="addUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
@@ -44,7 +45,7 @@ border="1" cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Status<br>
 </td>
-<td style="vertical-align: top;"><input name="Status"> </td>
+<td style="vertical-align: top;"><input name="Status" value="Y" readonly> </td>
 </tr>
 
 <tr>
@@ -58,6 +59,29 @@ name="Reset" type="reset"></td>
 <br>
 </form>
 <br>
+<%	
+String anyErrors = request.getParameter("Error");
+
+if (anyErrors!=null&&anyErrors.equals("1")){
+	out.println("<script type=\"text/javascript\">");
+	   out.println("alert('Deactive Error');");
+	   out.println("window.location='manage_Users.jsp';");
+	   out.println("</script>");
+}
+if(anyErrors!=null&&anyErrors.equals("2")){
+out.println("<script type=\"text/javascript\">");
+out.println("alert('The type of user can only be 'u'(user) or 'a'(admin)!');");
+out.println("window.location='Add_Admin.jsp';");
+out.println("</script>");
+}
+if (anyErrors!=null&&anyErrors.equals("3")){
+	 out.println("<script type=\"text/javascript\">");
+	   out.println("alert('Unknown Error');");
+	   out.println("window.location='Add_Admin.jsp';");
+	   out.println("</script>");
+}
+
+%>
 </body>
 </html>
 

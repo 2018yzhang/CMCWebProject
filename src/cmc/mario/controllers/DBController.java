@@ -67,24 +67,29 @@ public class DBController {
  * @param type the character of which represents the type of user
  * @return true if add successfully
  */
-public boolean addUser(String firstName, String lastName, String username, String password, char type){
+public int addUser(String firstName, String lastName, String username, String password, char type){
+	int error=1;
 	  Account a = this.getSpecificUser(username);
 	  if(a.getUsername()!=null){
-		  return false;
+		  error=2;
 	  }
 	  else{
-		  int i;
+		  int i=1;
 		  if(type=='a'){
 			i=  univLib.user_addUser(firstName, lastName, username, password, 'a');
 		  }
-		  else{
+		  else if(type=='u'){
 			i=  univLib.user_addUser(firstName, lastName, username, password, 'u');
 		  }
-		  if(!(i==1)){
-			  return false;
+		  else{
+			  error=3;
 		  }
-		  return true;
+		  if(!(i==1)){
+			   error=4;
+		  }
+		  error=i;
 	  }
+	  return error;
   }
   
   /**

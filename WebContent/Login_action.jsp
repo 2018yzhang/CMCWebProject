@@ -1,4 +1,10 @@
 <%@page language="java" import="cmc.mario.interfaces.*"%>
+<%@page errorPage="LoginErrorPage.jsp" %>
+<html>
+<head><title>Login Error Page</title>
+</head>
+<body>
+<font face="verdana">
 <%
 	AccountUI acctU = new AccountUI();
 	String uname = request.getParameter("Username");
@@ -13,14 +19,11 @@
 		session.setAttribute("ui", acctU );
 		response.sendRedirect("User_menu.jsp");
 	}
-	else if(k==2){
-		response.sendRedirect("Login.jsp?Error=1FailedForDeactiveAccount");
-		
-	}
-	else if (k==3){
-		response.sendRedirect("Login.jsp?Error=2FailedForInvalidPassword");
-	}
+
 	else{
-		response.sendRedirect("Login.jsp?Error=3FailedForUsername");
+		out.println("Sorry! Login Unsuccessful! The reason probably is the username is incorrect");
 	}
-%>
+	%>
+</font>
+</body>
+</html>

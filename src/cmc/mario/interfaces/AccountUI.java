@@ -46,7 +46,9 @@ public class AccountUI{
 	   * @return user is brought to accountUI if the user is logged on and authentication is confirmed	   
 	   */
 	  public int logOn(String username, String password){
-		return this.acctCtr.logOn(username, password);
+		int i = this.acctCtr.logOn(username, password);
+				
+		return i;
 	  }
 	  /**
 	   * This method to get type of user with username

@@ -67,20 +67,8 @@ public class AccountController {
 	  public int logOn(String username, String password){
 	  int status = 4;
 	  List<Account> acctList = database.getAccountList();
-	  Account a = new Account();
-
-	  for(int i =0; i< acctList.size();i++){
-		  if(acctList.get(i).getUsername().equals(username)){
-			  
-			  a = acctList.get(i);
-			  
-		  }
-		  else{
-			  status=4;
-		
-		  }
-	  }
-	  
+	  Account a = database.getSpecificUser(username);
+	  if(a!=null){
 			  if(a.getPassword().equals(password)){
 				  if(a.getStatus()=='Y'){
 					  if(a.getTypeOfUser()=='a'){
@@ -99,14 +87,22 @@ public class AccountController {
 					  }
 				  }
 				  else{
+					  
 					  status =2;
+					  throw new IllegalArgumentException("Deactiated Account!");
 					  //deactive
 				  }
 			  }
 			  else{
 				  status=3;
+				  throw new IllegalArgumentException("Incorrect Password!");
 				  //password
 			  }
+	  }
+	  else{
+		  status=4;
+		  throw new IllegalArgumentException("Incorrect Username!");
+	  }
       	return status;
       	}
 	  

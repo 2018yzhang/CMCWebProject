@@ -48,7 +48,7 @@ private AdminFuncController adContr;
  * @param type the type of the user
  * @return true if add successful, otherwise false
  */
-public boolean addUser(String firstName, String lastName, String username, String password, char type){
+public int addUser(String firstName, String lastName, String username, String password, char type){
   return this.adContr.addUser(firstName, lastName, username, password, type);
   }
   
