@@ -159,7 +159,7 @@ public int addUser(String firstName, String lastName, String username, String pa
   }
   
   /**
-   * To deactivate user-admin only.
+   * To reactivate user-admin only.
    * @param username the username of the user to be deleted - Yidan
    * @throws IllegalArgumentException if the account has already deactivated or it does not exist
    * @return true if reactivate successfully
@@ -171,6 +171,23 @@ public int addUser(String firstName, String lastName, String username, String pa
 	  }
 	  a.setStatus('Y');
 	  int i = this.editUser(a.getFirstName(), a.getLastName(), a.getUsername(), a.getPassword(), a.getTypeOfUser(), a.getStatus());
+	 if(i!=1){
+		 return false;
+	 }
+	 return true;
+  }
+  /**
+   * To delete user-admin only.
+   * @param username the username of the user to be deleted - Yidan
+   * @throws IllegalArgumentException if the account has already deactivated or it does not exist
+   * @return true if delete successfully
+   */
+  public boolean delateUser(String username){
+	  Account a = this.getSpecificUser(username);
+	  if(a.getFirstName()==null){
+		  return false;
+	  }
+	  int i = univLib.user_deleteUser(username);
 	 if(i!=1){
 		 return false;
 	 }
