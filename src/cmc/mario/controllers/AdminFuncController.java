@@ -110,7 +110,15 @@ public AdminFuncController(Admin adm, DBController dbContr) {
   public boolean reactivateUser(String username){
 	  return this.dbContr.reactivateUser(username);
   }
-  
+  /**
+   * To delete user-admin only.
+   * @param username the username of the user to be deleted - Yidan
+   * @throws IllegalArgumentException if the account has already deactivated or it does not exist
+   * @return true if delete successfully
+   */
+  public boolean delateUser(String username){
+	  return this.dbContr.delateUser(username);
+  }
   /**
    * To view the list of universities
    * @return list of universities

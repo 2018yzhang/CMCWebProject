@@ -89,6 +89,15 @@ public int addUser(String firstName, String lastName, String username, String pa
 	 return this.adContr.reactivateUser(username);
   }
   /**
+   * To delete user-admin only.
+   * @param username the username of the user to be deleted - Yidan
+   * @throws IllegalArgumentException if the account has already deactivated or it does not exist
+   * @return true if delete successfully
+   */
+  public boolean delateUser(String username){
+	  return this.adContr.delateUser(username);
+  }
+  /**
    * View a list of all university containing all info of these universities
    * @return list of university with all info
    */
