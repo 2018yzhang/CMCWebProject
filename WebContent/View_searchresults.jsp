@@ -12,25 +12,30 @@
 cellspacing="2">
 <tbody>
 <%
-List<University> ayee = (List<University>)request.getAttribute("results");
-for(University x: ayee)
-{
+List<University> ayee = (List<University>)request.getSession().getAttribute("results");
+//System.out.println(ayee.size());
+// for(int i =0; i<ayee.size();i++){
+//	University x = ayee.get(i);
+University x= new University();
+
+for(int i =0; i<ayee.size();i++){
+	x=ayee.get(i);
+
 	%>
 		
 
 <tr>
 <td style="vertical-align: top;">save<br>
 </td>
-<td style="vertical-align: top;"> <%x.getSchoolName(); %><br>
+<td style="vertical-align: top;"> <%=x.getSchoolName()%><br>
 </td>
+
 <td style="vertical-align: top;">view<br>
 </td>
 </tr>
+<%} %>
 </tbody>
-<%
-}
 
-%>
 </table>
 </body>
 </html>

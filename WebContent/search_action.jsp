@@ -189,8 +189,8 @@
 			response.sendRedirect("Search_schools.jsp?Error=1");
 			}
 			else{
-		// 		session.setAttribute("results", uni );
-		// 		response.sendRedirect("View_searchresults.jsp");
-				out.println(uni.get(0).getSchoolName());
+				session.setAttribute("results", uni );
+				response.sendRedirect("View_searchresults.jsp");
+				//out.println(uni.get(0).getSchoolName());
 		}
 		%>
