@@ -88,8 +88,8 @@ margin-bottom:20px;
 %>
 <body>
 <li><a href="Search_schools.jsp">Search for Schools</a></li>
-<li><a href="manage_Users.jsp">Manage My Saved Schools</a></li>
-<li><a href="manage_Users.jsp">Manage My Profile</a></li>
+<li><a href="Manage_savedschoolspageUser.jsp">Manage My Saved Schools</a></li>
+<li><a href="Manage_myprofileUser.jsp">Manage My Profile</a></li>
 </ul>
 </body>
 </html>
