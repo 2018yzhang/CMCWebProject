@@ -1,279 +1,196 @@
-<%@page language="java" import="java.util.ArrayList" import="java.util.List" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.ArrayList"%>
-
-<% 
-	int numStuMax,numStuMin,numFemMin,numFemMax,satVerbMin,satVerbMax,satMathMin,satMathMax,expMin,expMax,finAidMin,finAidMax,appMin,appMax,admitMin,admitMax,enrollMin,enrollMax;
-	double aScaleMin,aScaleMax,socScaleMin,socScaleMax,qScaleMin,qScaleMax;
-	AccountUI ui = (AccountUI)session.getAttribute("ui");
-	AccountController acctCtr = ui.getAccountController();
-	User user = (User)acctCtr.getAcct();
-	UserUI usr = new UserUI(user); 
-	String schoolname = request.getParameter("schoolname");
-
-	String state = request.getParameter("state");
-
-	String location = request.getParameter("location");
-
-	String control = request.getParameter("control");
-
-	
-	if(request.getParameter("numStuMax")==null)
-	{
-		 numStuMax = -1;
+		<%@page language="java" import="java.util.*" import="java.util.List" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.ArrayList"%>
+		
+		<% 
+		 	int numMax=-1,numMin=-1,FemMin=-1,FemMax=-1,VerbMin=-1,VerbMax=-1,MathMin=-1,MathMax=-1,expenMin=-1,expenMax=-1,AidMin=-1,
+		 	AidMax=-1,apMin=-1,apMax=-1,admMin=-1,admMax=-1,enrMin=-1,enrMax=-1;
+		 	double aScalMin=-1.0,aScalMax=-1.0,socScalMin=-1.0,socScalMax=-1.0,qScalMin=-1.0,qScalMax=-1.0;
+	//		DBController dbc = new DBController();
+			UserFuncController uct = (UserFuncController)session.getAttribute("userCtr");
+		
+			String schoolname = request.getParameter("schoolname");
+			
+			String state = request.getParameter("state");
+		
+			String location = request.getParameter("location");
+		
+			String control = request.getParameter("control");
+			
+			String numStuMax = request.getParameter("numStuMax");
+			if(numStuMax!="")
+			{
+				numMax = Integer.parseInt(numStuMax);
+			}
+			
+			String  numStuMin= request.getParameter("numStuMin");
+			if(numStuMin!="")
+			{
+				numMin = Integer.parseInt(numStuMin);
+			}
+			
+			String  numFemMin = request.getParameter("numFemMin");
+			if(numFemMin!="")
+			{
+				FemMin = Integer.parseInt(numFemMin);
+			}	
+			
+			String numFemMax = request.getParameter("numFemMax");
+			if(numFemMax!="")
+			{
+				FemMax = Integer.parseInt(numFemMax);
+			}
+			
+			String satVerbMin = request.getParameter("satVerbMin");
+			if(satVerbMin!="")
+			{
+				VerbMin = Integer.parseInt(satVerbMin);
+			}
+			
+			String satVerbMax = request.getParameter("satVerbMax");
+			if(satVerbMax!="")
+			{
+				VerbMax = Integer.parseInt(satVerbMax);
+			}
+			
+			String satMathMin = request.getParameter("satMathMin");
+			if(satMathMin!="")
+			{
+				MathMax = Integer.parseInt(satMathMin);
+			}
+			
+			String satMathMax = request.getParameter("satMathMax");
+			if(satMathMax!="")
+			{
+				MathMax = Integer.parseInt(satMathMax);
+			}	
+			
+			String  expMin= request.getParameter("expMin");
+			if(expMin!="")
+			{
+				expenMin = Integer.parseInt(expMin);
+			}
+			
+			String  expMax= request.getParameter("expMax");
+			if(expMax!="")
+			{
+				expenMax = Integer.parseInt(expMax);
+			}
+			
+			String  finAidMin= request.getParameter("finAidMin");
+			if(finAidMin!="")
+			{
+				AidMin = Integer.parseInt(finAidMin);
+			}
+			
+			String  finAidMax= request.getParameter("finAidMax");
+			if(finAidMax!="")
+			{
+				AidMax = Integer.parseInt(finAidMax);
+			}
+			
+			String appMin = request.getParameter("appMin");
+			if(appMin!="")
+			{
+				apMin = Integer.parseInt(appMin);
+			}
+			
+			String appMax = request.getParameter("appMax");
+			if(appMax!="")
+			{
+				apMax = Integer.parseInt(appMax);
+			}
+			
+			String admitMin = request.getParameter("admitMin");
+			if(admitMin!="")
+			{
+				admMin = Integer.parseInt(admitMin);
+			}
+			
+			String admitMax = request.getParameter("admitMax");
+			if(admitMax!="")
+			{
+				admMax = Integer.parseInt(admitMax);
+			}
+			
+			String enrollMin = request.getParameter("enrollMin");
+			if(enrollMin!="")
+			{
+				enrMin = Integer.parseInt(enrollMin);
+			}
+			
+			String enrollMax = request.getParameter("enrollMax");
+			if(enrollMax!="")
+			{
+				enrMax = Integer.parseInt(enrollMax);
+			}
+			
+			String aScaleMin = request.getParameter("aScaleMin");
+			if(aScaleMin!="")
+			{
+				aScalMin = Double.parseDouble(aScaleMin);
+			}
+			
+			String aScaleMax = request.getParameter("aScaleMax");
+			if(aScaleMax!="")
+			{
+				aScalMax = Double.parseDouble(aScaleMax);
+			}
+			
+			String socScaleMin = request.getParameter("socScaleMin");
+			if(socScaleMin!="")
+			{
+				socScalMin = Double.parseDouble(socScaleMin);
+			}
+			
+			String socScaleMax = request.getParameter("socScaleMax");
+			if(socScaleMax!="")
+			{
+				socScalMax = Double.parseDouble(socScaleMax);
+			}
+			
+			String qScaleMin = request.getParameter("qScaleMin");
+			if(qScaleMin!="")
+			{
+				qScalMin = Double.parseDouble(qScaleMin);
+			}
+			
+			String qScaleMax = request.getParameter("qScaleMiax");
+			if(qScaleMax!="")
+			{
+				qScalMax = Double.parseDouble(qScaleMax);
+			}
+		
+			String emp = request.getParameter("emp");
+		
+			String emp2 = request.getParameter("emp2");
+		
+			String emp3 = request.getParameter("emp3");
+		
+			String emp4 = request.getParameter("emp4");
+		
+			String emp5 = request.getParameter("emp5");
+			ArrayList<String> arr = new ArrayList<String>();
+			arr.add(emp);
+			arr.add(emp2);
+			arr.add(emp3);
+			arr.add(emp4);
+			arr.add(emp5);
+			System.out.println(arr.size());
+			String[] test=new String[arr.size()];
+	for(int i =0; i<arr.size();i++ ){
+		test[i]=arr.get(i);
 	}
-	else
+	if(test[0]==""&&test[1]==""&&test[2]==""&&test[3]==""&&test[4]=="")
 	{
-		 numStuMax = Integer.parseInt(request.getParameter("numStuMax"));
-	}
-	
-	//int numStuMin = Integer.parseInt(request.getParameter("numStuMin"));
-	if(request.getParameter("numStuMin")==null)
-	{
-		 numStuMin = -1;
-	}
-	else
-	{
-		 numStuMin = Integer.parseInt(request.getParameter("numStuMin"));
-	}
-	
-	//int numFemMin = Integer.parseInt(request.getParameter("numFemMin"));
-	if(request.getParameter("numFemMin")==null)
-	{
-		 numFemMin = -1;
-	}
-	else
-	{
-		 numFemMin = Integer.parseInt(request.getParameter("numFemMin"));
-	}
-	
-	//int numFemMax = Integer.parseInt(request.getParameter("numFemMax"));
-	if(request.getParameter("numFemMax")==null)
-	{
-		 numFemMax = -1;
-	}
-	else
-	{
-		 numFemMax = Integer.parseInt(request.getParameter("numFemMax"));
-	}
-	
-	//int satVerbMin = Integer.parseInt(request.getParameter("satVerbMin"));
-	if(request.getParameter("satVerbMin")==null)
-	{
-		 satVerbMin = -1;
-	}
-	else
-	{
-		 satVerbMin = Integer.parseInt(request.getParameter("satVerbMin"));
-	}
-	
-	//int satVerbMax = Integer.parseInt(request.getParameter("satVerbMax"));
-	if(request.getParameter("satVerbMax")==null)
-	{
-		 satVerbMax = -1;
-	}
-	else
-	{
-		 satVerbMax = Integer.parseInt(request.getParameter("satVerbMax"));
-	}
-	
-	//int satMathMin = Integer.parseInt(request.getParameter("satMathMin"));
-	if(request.getParameter("satMathMin")==null)
-	{
-		 satMathMin = -1;
-	}
-	else
-	{
-		 satMathMin = Integer.parseInt(request.getParameter("satMathMin"));
-	}
-	
-	//int satMathMax = Integer.parseInt(request.getParameter("satMathMax"));
-	if(request.getParameter("satMathMax")==null)
-	{
-		 satMathMax = -1;
-	}
-	else
-	{
-		 satMathMax = Integer.parseInt(request.getParameter("satMathMax"));
-	}
-	
-	//int expMin = Integer.parseInt(request.getParameter("expMin"));
-	if(request.getParameter("expMin")==null)
-	{
-		 expMin = -1;
-	}
-	else
-	{
-		 expMin = Integer.parseInt(request.getParameter("expMin"));
-	}
-	
-	//int expMax = Integer.parseInt(request.getParameter("expMax"));
-	if(request.getParameter("expMax")==null)
-	{
-		 expMax = -1;
-	}
-	else
-	{
-		 expMax = Integer.parseInt(request.getParameter("expMax"));
-	}
-	
-	//int finAidMin = Integer.parseInt(request.getParameter("finAidMin"));
-	if(request.getParameter("finAidMin")==null)
-	{
-		 finAidMin = -1;
-	}
-	else
-	{
-		 finAidMin = Integer.parseInt(request.getParameter("finAidMin"));
-	}
-	
-	//int finAidMax = Integer.parseInt(request.getParameter("finAidMax"));
-	if(request.getParameter("finAidMax")==null)
-	{
-		 finAidMax = -1;
-	}
-	else
-	{
-		 finAidMax = Integer.parseInt(request.getParameter("finAidMax"));
-	}
-	
-	//int appMin = Integer.parseInt(request.getParameter("appMin"));
-	if(request.getParameter("appMin")==null)
-	{
-		 appMin = -1;
-	}
-	else
-	{
-		 appMin = Integer.parseInt(request.getParameter("appMin"));
-	}
-	
-	//int appMax = Integer.parseInt(request.getParameter("appMax"));
-	if(request.getParameter("appMax")==null)
-	{
-		 appMax = -1;
-	}
-	else
-	{
-		 appMax = Integer.parseInt(request.getParameter("appMax"));
-	}	
-	
-	//int admitMin = Integer.parseInt(request.getParameter("admitMin"));
-	if(request.getParameter("admitMin")==null)
-	{
-		 admitMin = -1;
-	}
-	else
-	{
-		 admitMin = Integer.parseInt(request.getParameter("admitMin"));
-	}
-	
-	//int admitMax = Integer.parseInt(request.getParameter("admitMax"));
-	if(request.getParameter("admitMax")==null)
-	{
-		 admitMax = -1;
-	}
-	else
-	{
-		 admitMax = Integer.parseInt(request.getParameter("admitMax"));
-	}
-	
-	//int enrollMax = Integer.parseInt(request.getParameter("enrollMax"));
-	if(request.getParameter("enrollMax")==null)
-	{
-		 enrollMax = -1;
-	}
-	else
-	{
-		 enrollMax = Integer.parseInt(request.getParameter("enrollMax"));
-	}
-	
-	//int enrollMin = Integer.parseInt(request.getParameter("enrollMin"));
-	if(request.getParameter("enrollMin")==null)
-	{
-		 enrollMin = -1;
-	}
-	else
-	{
-		 enrollMin = Integer.parseInt(request.getParameter("enrollMin"));
+		test = new String[0];
 	}
 	
-	//double aScaleMin = Double.parseDouble(request.getParameter("aScaleMin"));
-	if(request.getParameter("aScaleMin")==null)
-	{
-		 aScaleMin = -1.0;
-	}
-	else
-	{
-		 aScaleMin = Integer.parseInt(request.getParameter("aScaleMin"));
-	}
-	
-	//double aScaleMax = Double.parseDouble(request.getParameter("aScaleMax"));
-	if(request.getParameter("aScaleMax")==null)
-	{
-		 aScaleMax = -1.0;
-	}
-	else
-	{
-		 aScaleMax = Integer.parseInt(request.getParameter("aScaleMax"));
-	}
-	
-	//double socScaleMin = Double.parseDouble(request.getParameter("socScaleMin"));
-	if(request.getParameter("socScaleMin")==null)
-	{
-		 socScaleMin = -1.0;
-	}
-	else
-	{
-		 socScaleMin = Integer.parseInt(request.getParameter("socScaleMin"));
-	}
-	
-	//double socScaleMax = Double.parseDouble(request.getParameter("socScaleMax"));
-	if(request.getParameter("socScaleMax")==null)
-	{
-		 socScaleMax = -1.0;
-	}
-	else
-	{
-		 socScaleMax = Integer.parseInt(request.getParameter("socScaleMax"));
-	}
-	
-	//double qScaleMin = Double.parseDouble(request.getParameter("qScaleMin"));
-	if(request.getParameter("qScaleMin")==null)
-	{
-		 qScaleMin = -1.0;
-	}
-	else
-	{
-		 qScaleMin = Integer.parseInt(request.getParameter("qScaleMin"));
-	}
-	
-	if(request.getParameter("qScaleMiax")==null)
-	{
-		 qScaleMax = -1.0;
-	}
-	else
-	{
-		 qScaleMax = Integer.parseInt(request.getParameter("qScaleMiax"));
-	}
-	//double qScaleMax = Double.parseDouble(request.getParameter("qScaleMiax"));
-
-	String emp = request.getParameter("emp");
-
-	String emp2 = request.getParameter("emp2");
-
-	String emp3 = request.getParameter("emp3");
-
-	String emp4 = request.getParameter("emp4");
-
-	String emp5 = request.getParameter("emp5");
-
-	String[] empList = {emp,emp2,emp3,emp4,emp5};
- 	List<University> uni = usr.search(schoolname, state, location, control, numStuMin, numStuMax, numFemMin, numFemMax, satVerbMin, satVerbMax,satMathMin, satMathMax, expMin, expMax, finAidMin, finAidMax, appMin, appMax, admitMin,admitMax, enrollMin, enrollMax, aScaleMin, aScaleMax, socScaleMin, socScaleMax,qScaleMin, qScaleMax, empList);
-	//System.out.print(uni.get(0).getSchoolName());
-	if(uni.isEmpty())
-	{
-		response.sendRedirect("Search_schools.jsp?Error=1NoSchoolsFound");	
-	}
-	else{
-		session.setAttribute("results", uni );
-		response.sendRedirect("View_searchresults.jsp");
-	}
-%>
+			List<University> uni = uct.search(schoolname,state,location,control,numMax,numMin,FemMin,FemMax,VerbMin,VerbMax,MathMin,MathMax,expenMin,expenMax,AidMin,AidMax,apMin,apMax,admMin,admMax,enrMin,enrMax,aScalMin,aScalMax,socScalMin,socScalMax,qScalMin,qScalMax,test);
+			if(uni.isEmpty()){
+			response.sendRedirect("Search_schools.jsp?Error=1");
+			}
+			else{
+		// 		session.setAttribute("results", uni );
+		// 		response.sendRedirect("View_searchresults.jsp");
+				out.println(uni.get(0).getSchoolName());
+		}
+		%>
