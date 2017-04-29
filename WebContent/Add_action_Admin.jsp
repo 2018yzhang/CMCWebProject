@@ -1,4 +1,10 @@
 <%@page language="java" import="java.util.*" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*"%>
+<%@page errorPage="AddUserErrorPage.jsp" %>
+<html>
+<head><title>Add User Error Page</title>
+</head>
+<body>
+<font face="verdana">
 <%
 	AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
 	String fname =request.getParameter("FirstName");
@@ -11,22 +17,18 @@
 	//session.setAttribute("username", uname);
 
 	int t = ac.addUser(fname, lname, uname, password, type);
-	System.out.println(t);
-	int error=0;
-	if(t==2){
-		error=1;
-		response.sendRedirect("Add_Admin.jsp?Error=1FailedForExsitedAccount");
-	}
-	else if(t==3){
-		error=2;
-		response.sendRedirect("Add_Admin.jsp?Error=2FailedForInvalidTypeInput");
-	}
-	else if(t==4){
-		error=3;
-		response.sendRedirect("Add_Admin.jsp?Error=3FailedForUnknownError");
-		}
-	else{
+	
+	if(t==0){
 		response.sendRedirect("manage_Users.jsp");
 	}
-	session.setAttribute("Error", error);
+	else if(t==1){
+		response.sendRedirect("manage_Users.jsp");
+	}
+	else{
+		out.println("Sorry! Login Unsuccessful! The reason probably is the username is incorrect");
+	}
+	
 %>
+</font>
+</body>
+</html>

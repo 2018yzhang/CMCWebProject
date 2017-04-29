@@ -84,7 +84,7 @@ border:radius:10px;
 <div class="container">
 <div class="content">
 <h2>Welcome</h2>
-<form method="post" action="Signup.jsp" name="Signup" ><br>
+<form method="post" action="Signup_Admin.jsp" name="Signup" ><br>
 <table style="text-align: left; width: 266px; height: 228px; "
 id="t01">
 <tbody>
