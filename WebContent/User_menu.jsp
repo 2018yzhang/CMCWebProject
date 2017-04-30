@@ -59,15 +59,22 @@ margin-bottom:20px;
 </head>
 
 <body>
+<%
+	AccountUI ui = (AccountUI)session.getAttribute("ui");
+	AccountController acctCtr = ui.getAccountController();
+	User user = (User)acctCtr.getAcct();
+	UserFuncController userCtr = new UserFuncController(user);
+	session.setAttribute("userCtr", userCtr );
+%>
 <header>
 <div class="container">
 <div class="logo">
 	<img src="welcom2.png" width="65" alt="" title="">
 </div>
 <nav>
-<li><a href="LogOff.jsp">Logout</a></li>
+<li><a href="LogOff.jsp"><strong><%=user.getUsername()%>|Logout</strong></a></li>
 </nav>
-<h1>Choose My College</h1>
+<h1>Choose Your College</h1>
 </div>
 </header>
 </head>
@@ -75,14 +82,7 @@ margin-bottom:20px;
 <div class="content">
 <h2>Main Menu</h2>
 <ul class="a">
-<%
-	AccountUI ui = (AccountUI)session.getAttribute("ui");
-	AccountController acctCtr = ui.getAccountController();
-	User user = (User)acctCtr.getAcct();
-	UserFuncController userCtr = new UserFuncController(user);
-	session.setAttribute("userCtr", userCtr );
- 	out.print("Welcome: "+user.getUsername()+ "!");
-%>
+
 <body>
 <li><a href="Search_schools.jsp">Search for Schools</a></li>
 <li><a href="Manage_savedschoolspageUser.jsp">Manage My Saved Schools</a></li>

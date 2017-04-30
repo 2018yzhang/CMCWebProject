@@ -43,6 +43,7 @@ nav li a{
 	color: white;
 	 text-decoration: none;
 }
+
 .content h2{
 color:black;
 background: #f1f1c1;
@@ -61,13 +62,19 @@ margin-bottom:20px;
 </head>
 
 <body>
+<% AccountUI ui = (AccountUI)session.getAttribute("ui");
+AccountController acctCtr = ui.getAccountController();
+Admin a = (Admin)acctCtr.getAcct();
+AdminFuncController ac = new AdminFuncController(a);
+session.setAttribute("ac", ac );
+%>
 <header>
 <div class="container">
 <div class="logo">
 	<img src="welcom2.png" width="65" alt="" title="">
 </div>
 <nav>
-<li><a href="LogOff.jsp">Logout</a></li>
+<li><a href="LogOff.jsp"><strong><%=a.getUsername()%>|Logout</strong></a></li>
 </nav>
 <h1>Choose My College</h1>
 </div>
@@ -82,12 +89,7 @@ margin-bottom:20px;
 <li><a href="ViewUniversities.jsp">Manage University</a></li>
 <li><a href="manage_Users.jsp">Manage Users</a></li>
 </ul>
-<% AccountUI ui = (AccountUI)session.getAttribute("ui");
-AccountController acctCtr = ui.getAccountController();
-Admin a = (Admin)acctCtr.getAcct();
-AdminFuncController ac = new AdminFuncController(a);
-session.setAttribute("ac", ac );
-%>
+
 </div>
 </div>
 <footer>

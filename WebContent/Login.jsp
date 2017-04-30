@@ -27,6 +27,10 @@ float:left;
 margin-top:10px;
 url:logo.PNG;
 }
+h1 a{
+color: white;
+text-decoration: none;
+}
 .content h2{
 color:black;
 background: #f1f1c1;
@@ -53,7 +57,7 @@ background-color:#f1f1c1;
 <div class="logo">
 	<img src="welcom2.png" width="65" alt="" title="">
 </div>
-<h1>Choose Your College</h1>
+<h1><a href="welcome.jsp">Choose Your College</a></h1>
 </div>
 </header>
 <div class="container">
