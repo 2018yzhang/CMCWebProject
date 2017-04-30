@@ -90,11 +90,11 @@ public class SearchController {
 	 * @param popMajor
 	 *            an list of popular major or emphases at the university
 	 */
-	public List<University> search(String schoolName, String state, String location, String control, int numOfStuStart, int numOfStuEnd, 
-			 int perFemStart,int perFemEnd, int satVerbalStart, int satVerbalEnd, int satMathStart, int satMathEnd, int priceStart, int priceEnd,
-			 int finAidStart,int finAidEnd, int numOfAppStart, int numOfAppEnd, int perAdmitStart, int perAdmitEnd, int perEnrollStart, 
-			 int perEnrollEnd, double academicScaleStart, double academicScaleEnd, double socialScaleStart, double socialScaleEnd, double lifeScaleStart,
-			 double lifeScaleEnd, String[] popMajor) {
+	public List<University> search(String schoolName, String state, String location, String control, String numOfStuStart, String numOfStuEnd, 
+			 String perFemStart,String perFemEnd, String satVerbalStart, String satVerbalEnd, String satMathStart, String satMathEnd, String priceStart, String priceEnd,
+			 String finAidStart,String finAidEnd, String numOfAppStart, String numOfAppEnd, String perAdmitStart, String perAdmitEnd, String perEnrollStart, 
+			 String perEnrollEnd, String academicScaleStart, String academicScaleEnd, String socialScaleStart, String socialScaleEnd, String lifeScaleStart,
+			 String lifeScaleEnd, String[] popMajor) {
 		return dbControl.searchResults(schoolName, state, location, control, numOfStuStart, numOfStuEnd, perFemStart,
 				perFemEnd, satVerbalStart, satVerbalEnd, satMathStart, satMathEnd, priceStart, priceEnd, finAidStart,
 				finAidEnd, numOfAppStart, numOfAppEnd, perAdmitStart, perAdmitEnd, perEnrollStart, perEnrollEnd,

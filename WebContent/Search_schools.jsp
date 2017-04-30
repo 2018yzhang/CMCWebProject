@@ -110,13 +110,13 @@ name="schoolname" type="text"><br>
 <tr>
 <td style="vertical-align: top;">by LOCATION </td>
 <td style="vertical-align: top;"><input name="location" type="text">
-(SUBURBAN, URBAN,SMALL-CITY, OR -1 for UNKNOWN)<br>
+(SUBURBAN, URBAN,SMALL-CITY, OR LEAVE BLANK for UNKNOWN)<br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">by CONTROL </td>
 <td style="vertical-align: top;"><input name="control" type="text">
-(PRIVATE, STATE, CITY, OR -1 for UNKNOWN)<br>
+(PRIVATE, STATE, CITY, OR LEAVE BLANK for UNKNOWN)<br>
 </td>
 </tr>
 <tr>

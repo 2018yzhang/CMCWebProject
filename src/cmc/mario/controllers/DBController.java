@@ -524,32 +524,277 @@ public int addUser(String firstName, String lastName, String username, String pa
 	 * @return list of universities meet search conditions
 	 */
 
-	public List<University> searchResults(String schoolName, String state, String location, String control, int numOfStuStart, int numOfStuEnd, 
-			 int perFemStart,int perFemEnd, int satVerbalStart, int satVerbalEnd, int satMathStart, int satMathEnd, int priceStart, int priceEnd,
-			 int finAidStart,int finAidEnd, int numOfAppStart, int numOfAppEnd, int perAdmitStart, int perAdmitEnd, int perEnrollStart, 
-			 int perEnrollEnd, double academicScaleStart, double academicScaleEnd, double socialScaleStart, double socialScaleEnd, double lifeScaleStart,
-			 double lifeScaleEnd, String[] popMajor){
+	public List<University> searchResults(String schoolName, String state, String location, String control, String numOfStuStart, String numOfStuEnd, 
+			 String perFemStart,String perFemEnd, String satVerbalStart, String satVerbalEnd, String satMathStart, String satMathEnd, String priceStart, String priceEnd,
+			 String finAidStart,String finAidEnd, String numOfAppStart, String numOfAppEnd, String perAdmitStart, String perAdmitEnd, String perEnrollStart, 
+			 String perEnrollEnd, String academicScaleStart, String academicScaleEnd, String socialScaleStart, String socialScaleEnd, String lifeScaleStart,
+			 String lifeScaleEnd, String[] popMajor){
 			List<University> results = new ArrayList<University>();
 			String[][] univList = univLib.university_getUniversities();
 			List<University> resultT = new ArrayList<University>();
-
+			for(int i=0;i<schoolName.length();i++){
+				if(Character.isLetter(schoolName.charAt(i))){
+					continue;
+				}
+				else{
+					throw new IllegalArgumentException("The input of name cannot include any number or symbol!");
+				}
+			}
+			for(int i=0;i<state.length();i++){
+				if(Character.isLetter(state.charAt(i))){
+					continue;
+				}
+				else{
+					throw new IllegalArgumentException("The input of state cannot include any number or symbol!");
+				}
+			}
+			for(int i=0;i<location.length();i++){
+				if(Character.isLetter(location.charAt(i))){
+					continue;
+				}
+				else{
+					throw new IllegalArgumentException("The input of location cannot include any number or symbol!");
+				}
+			}
+			for(int i=0;i<control.length();i++){
+				if(Character.isLetter(control.charAt(i))){
+					continue;
+				}
+				else{
+					throw new IllegalArgumentException("The input of control cannot include any number or symbol!");
+				}
+			}
+			int numMax=-1,numMin=-1,FemMin=-1,FemMax=-1,VerbMin=-1,VerbMax=-1,MathMin=-1,MathMax=-1,expenMin=-1,expenMax=-1,AidMin=-1,
+				 	AidMax=-1,apMin=-1,apMax=-1,admMin=-1,admMax=-1,enrMin=-1,enrMax=-1;
+				 	double aScalMin=-1.0,aScalMax=-1.0,socScalMin=-1.0,socScalMax=-1.0,qScalMin=-1.0,qScalMax=-1.0;
+				 	try{
+					if(numOfStuEnd!="")
+					{
+						numMax = Integer.parseInt(numOfStuEnd);
+						if(numMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+				 	try{
+					if(numOfStuStart!="")
+					{
+						numMin = Integer.parseInt(numOfStuStart);
+						if(numMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+				 	try{
+					if(perFemStart!="")
+					{
+						FemMin = Integer.parseInt(perFemStart);
+						if(FemMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+				 	try{
+					if(perFemEnd!="")
+					{
+						FemMax = Integer.parseInt(perFemEnd);
+						if(FemMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+				 	try{
+					if(satVerbalStart!="")
+					{
+						VerbMin = Integer.parseInt(satVerbalStart);
+						if(VerbMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+				 	try{
+					if(satVerbalEnd!="")
+					{
+						VerbMax = Integer.parseInt(satVerbalEnd);
+						if(VerbMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(satMathStart!="")
+					{
+						MathMin = Integer.parseInt(satMathStart);
+						if(MathMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(satMathEnd!="")
+					{
+						MathMax = Integer.parseInt(satMathEnd);
+						if(MathMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(priceStart!="")
+					{
+						expenMin = Integer.parseInt(priceStart);
+						if(expenMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(priceEnd!="")
+					{
+						expenMax = Integer.parseInt(priceEnd);
+						if(expenMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(finAidStart!="")
+					{
+						AidMin = Integer.parseInt(finAidStart);
+						if(AidMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(finAidEnd!="")
+					{
+						AidMax = Integer.parseInt(finAidEnd);
+						if(AidMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(numOfAppStart!="")
+					{
+						apMin = Integer.parseInt(numOfAppStart);
+						if(apMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(numOfAppEnd!="")
+					{
+						apMax = Integer.parseInt(numOfAppEnd);
+						if(apMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(perAdmitStart!="")
+					{
+						admMin = Integer.parseInt(perAdmitStart);
+						if(admMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(perAdmitEnd!="")
+					{
+						admMax = Integer.parseInt(perAdmitEnd);
+						if(admMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(perEnrollStart!="")
+					{
+						enrMin = Integer.parseInt(perEnrollStart);
+						if(enrMin<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(perEnrollEnd!="")
+					{
+						enrMax = Integer.parseInt(perEnrollEnd);
+						if(enrMax<-1){
+							throw new IllegalArgumentException("Number can't be negative!");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(academicScaleStart!="")
+					{
+						aScalMin = Double.parseDouble(academicScaleStart);
+						if(aScalMin<-1||aScalMin==0){
+							throw new IllegalArgumentException("Number can't be negative or zero!");
+						}
+						if(aScalMin>5){
+							throw new IllegalArgumentException("The scale can't be more than 5");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(academicScaleEnd!="")
+					{
+						aScalMax = Double.parseDouble(academicScaleEnd);
+						if(aScalMax<-1||aScalMax==0){
+							throw new IllegalArgumentException("Number can't be negative or zero!");
+						}
+						if(aScalMax>5){
+							throw new IllegalArgumentException("The scale can't be more than 5");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(socialScaleStart!="")
+					{
+						socScalMin = Double.parseDouble(socialScaleStart);
+						if(socScalMin<-1||socScalMin==0){
+							throw new IllegalArgumentException("Number can't be negative or zero!");
+						}
+						if(socScalMin>5){
+							throw new IllegalArgumentException("The scale can't be more than 5");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(socialScaleEnd!="")
+					{
+						socScalMax = Double.parseDouble(socialScaleEnd);
+						if(socScalMax<-1||socScalMax==0){
+							throw new IllegalArgumentException("Number can't be negative or zero!");
+						}
+						if(socScalMax>5){
+							throw new IllegalArgumentException("The scale can't be more than 5");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(lifeScaleStart!="")
+					{
+						qScalMin = Double.parseDouble(lifeScaleStart);
+						if(qScalMin<-1||qScalMin==0){
+							throw new IllegalArgumentException("Number can't be negative or zero!");
+						}
+						if(qScalMin>5){
+							throw new IllegalArgumentException("The scale can't be more than 5");
+						}
+					}}catch(NumberFormatException ne){}
+					try{
+					if(lifeScaleEnd!="")
+					{
+						qScalMax = Double.parseDouble(lifeScaleEnd);
+						if(qScalMax<-1||qScalMax==0){
+							throw new IllegalArgumentException("Number can't be negative or zero!");
+						}
+						if(qScalMax>5){
+							throw new IllegalArgumentException("The scale can't be more than 5");
+						}
+					}}catch(NumberFormatException ne){}
+				
 			 for(String[] arr: univList){
 				 if((arr[0].contains(schoolName)|| (schoolName == "")) 
 							&& ((arr[1] .contains(state)) ||(state == "")) 
 							&& ((arr[2] .contains(location)) ||(location == "")) 
 							&& ((arr[3] .contains(control)) ||(control == "")) 
-							&& (((numOfStuStart<=Integer.parseInt(arr[4]))&&(Integer.parseInt(arr[4])<= numOfStuEnd)) || ((numOfStuStart<=Integer.parseInt(arr[4]))&&(numOfStuEnd==-1))||((numOfStuStart==-1)&&(Integer.parseInt(arr[4])<= numOfStuEnd))||((numOfStuStart==-1)&&(numOfStuEnd==-1)))
-							&& (((perFemStart<=Integer.parseInt(arr[5]))&&(Integer.parseInt(arr[5])<= perFemEnd)) || ((perFemStart<=Integer.parseInt(arr[5]))&&(perFemEnd==-1))||((perFemStart==-1)&&(Integer.parseInt(arr[5])<= perFemEnd))||((perFemStart==-1)&&(perFemEnd==-1)))
-							&& (((satVerbalStart<=Integer.parseInt(arr[6]))&&(Integer.parseInt(arr[6])<= satVerbalEnd)) || ((satVerbalStart<=Integer.parseInt(arr[6]))&&(satVerbalEnd==-1))||((satVerbalStart==-1)&&(Integer.parseInt(arr[6])<= satVerbalEnd))||((satVerbalStart==-1)&&(satVerbalEnd==-1)))
-							&& (((satMathStart<=Integer.parseInt(arr[7]))&&(Integer.parseInt(arr[7])<= satMathEnd)) || ((satMathStart<=Integer.parseInt(arr[7]))&&(satMathEnd==-1))||((satMathStart==-1)&&(Integer.parseInt(arr[7])<= satMathEnd))||((satMathStart==-1)&&(satMathEnd==-1)))
-							&& (((priceStart<=Integer.parseInt(arr[8]))&&(Integer.parseInt(arr[8])<= priceEnd)) ||((priceStart<=Integer.parseInt(arr[8]))&&(priceEnd==-1))||((priceStart==-1)&&(Integer.parseInt(arr[8])<= priceEnd))||((priceStart==-1)&&(priceEnd==-1)))
-							&& (((finAidStart<=Integer.parseInt(arr[9]))&&(Integer.parseInt(arr[9])<= finAidEnd)) || ((finAidStart<=Integer.parseInt(arr[9]))&&( finAidEnd==-1))||((finAidStart==-1)&&(Integer.parseInt(arr[9])<= finAidEnd))||((finAidStart==-1)&&(finAidEnd==-1)))
-							&& (((numOfAppStart<=Integer.parseInt(arr[10]))&&(Integer.parseInt(arr[10])<= numOfAppEnd)) || ((numOfAppStart<=Integer.parseInt(arr[10]))&&(numOfAppEnd==-1))||((numOfAppStart==-1)&&(Integer.parseInt(arr[10])<= numOfAppEnd))||((numOfAppStart==-1)&&(numOfAppEnd==-1)))
-							&& (((perAdmitStart<=Integer.parseInt(arr[11]))&&(Integer.parseInt(arr[11])<= perAdmitEnd)) || ((perAdmitStart<=Integer.parseInt(arr[11]))&&(perAdmitEnd==-1))||((perAdmitStart==-1)&&(Integer.parseInt(arr[11])<= perAdmitEnd))||((perAdmitStart==-1)&&(perAdmitEnd==-1)))
-							&& (((perEnrollStart<=Integer.parseInt(arr[12]))&&(Integer.parseInt(arr[12])<= perEnrollEnd)) || ((perEnrollStart<=Integer.parseInt(arr[12]))&&(perEnrollEnd==-1))||((perEnrollStart==-1)&&(Integer.parseInt(arr[12])<= perEnrollEnd))||((perEnrollStart==-1)&&(perEnrollEnd==-1)))
-							&& (((academicScaleStart<=Double.parseDouble(arr[13]))&&(Double.parseDouble(arr[13])<= academicScaleEnd)) || ((academicScaleStart<=Double.parseDouble(arr[13]))&&(academicScaleEnd==-1))||((academicScaleStart==-1)&&(Double.parseDouble(arr[13])<= academicScaleEnd))||((academicScaleStart==-1)&&(academicScaleEnd==-1)))
-							&& (((socialScaleStart<=Double.parseDouble(arr[14]))&&(Integer.parseInt(arr[14])<= socialScaleEnd)) || ((socialScaleStart<=Double.parseDouble(arr[14]))&&(socialScaleEnd==-1))||((socialScaleStart==-1)&&(Integer.parseInt(arr[14])<= socialScaleEnd))||((socialScaleStart==-1)&&(socialScaleEnd==-1)))
-							&& (((lifeScaleStart<=Double.parseDouble(arr[15]))&&(Integer.parseInt(arr[15])<= lifeScaleEnd)) || ((lifeScaleStart<=Double.parseDouble(arr[15]))&&(lifeScaleEnd==-1))||((lifeScaleStart==-1)&&(Integer.parseInt(arr[15])<= lifeScaleEnd))||((lifeScaleStart==-1)&&(Integer.parseInt(arr[15])<= lifeScaleEnd))||((lifeScaleStart==-1)&&(lifeScaleEnd==-1)))
+							&& (((numMin<=Integer.parseInt(arr[4]))&&(Integer.parseInt(arr[4])<= numMax)) || ((numMin<=Integer.parseInt(arr[4]))&&(numMax==-1))||((numMin==-1)&&(Integer.parseInt(arr[4])<= numMax))||((numMin==-1)&&(numMax==-1)))
+							&& (((FemMin<=Integer.parseInt(arr[5]))&&(Integer.parseInt(arr[5])<= FemMax)) || ((FemMin<=Integer.parseInt(arr[5]))&&(FemMax==-1))||((FemMin==-1)&&(Integer.parseInt(arr[5])<= FemMax))||((FemMin==-1)&&(FemMax==-1)))
+							&& (((VerbMin<=Integer.parseInt(arr[6]))&&(Integer.parseInt(arr[6])<= VerbMax)) || ((VerbMin<=Integer.parseInt(arr[6]))&&(VerbMax==-1))||((VerbMin==-1)&&(Integer.parseInt(arr[6])<= VerbMax))||((VerbMin==-1)&&(VerbMax==-1)))
+							&& (((MathMin<=Integer.parseInt(arr[7]))&&(Integer.parseInt(arr[7])<= MathMax)) || ((MathMin<=Integer.parseInt(arr[7]))&&(MathMax==-1))||((MathMin==-1)&&(Integer.parseInt(arr[7])<= MathMax))||((MathMin==-1)&&(MathMax==-1)))
+							&& (((expenMin<=Integer.parseInt(arr[8]))&&(Integer.parseInt(arr[8])<= expenMax)) ||((expenMin<=Integer.parseInt(arr[8]))&&(expenMax==-1))||((expenMin==-1)&&(Integer.parseInt(arr[8])<= expenMax))||((expenMin==-1)&&(expenMax==-1)))
+							&& (((AidMin<=Integer.parseInt(arr[9]))&&(Integer.parseInt(arr[9])<= AidMax)) || ((AidMin<=Integer.parseInt(arr[9]))&&( AidMax==-1))||((AidMin==-1)&&(Integer.parseInt(arr[9])<= AidMax))||((AidMin==-1)&&(AidMax==-1)))
+							&& (((apMin<=Integer.parseInt(arr[10]))&&(Integer.parseInt(arr[10])<= apMax)) || ((apMin<=Integer.parseInt(arr[10]))&&(apMax==-1))||((apMin==-1)&&(Integer.parseInt(arr[10])<= apMax))||((apMin==-1)&&(apMax==-1)))
+							&& (((admMin<=Integer.parseInt(arr[11]))&&(Integer.parseInt(arr[11])<= admMax)) || ((admMin<=Integer.parseInt(arr[11]))&&(admMax==-1))||((admMin==-1)&&(Integer.parseInt(arr[11])<= admMax))||((admMin==-1)&&(admMax==-1)))
+							&& (((enrMin<=Integer.parseInt(arr[12]))&&(Integer.parseInt(arr[12])<= enrMax)) || ((enrMin<=Integer.parseInt(arr[12]))&&(enrMax==-1))||((enrMin==-1)&&(Integer.parseInt(arr[12])<= enrMax))||((enrMin==-1)&&(enrMax==-1)))
+							&& (((aScalMin<=Double.parseDouble(arr[13]))&&(Double.parseDouble(arr[13])<= aScalMax)) || ((aScalMin<=Double.parseDouble(arr[13]))&&(aScalMax==-1))||((aScalMin==-1)&&(Double.parseDouble(arr[13])<= aScalMax))||((aScalMin==-1)&&(aScalMax==-1)))
+							&& (((socScalMin<=Double.parseDouble(arr[14]))&&(Integer.parseInt(arr[14])<= socScalMax)) || ((socScalMin<=Double.parseDouble(arr[14]))&&(socScalMax==-1))||((socScalMin==-1)&&(Integer.parseInt(arr[14])<= socScalMax))||((socScalMin==-1)&&(socScalMax==-1)))
+							&& (((qScalMin<=Double.parseDouble(arr[15]))&&(Integer.parseInt(arr[15])<= qScalMax)) || ((qScalMin<=Double.parseDouble(arr[15]))&&(qScalMax==-1))||((qScalMin==-1)&&(Integer.parseInt(arr[15])<= qScalMax))||((qScalMin==-1)&&(Integer.parseInt(arr[15])<= qScalMax))||((qScalMin==-1)&&(qScalMax==-1)))
 							){
 			
 						University u = new University(arr[0],arr[1],arr[2],arr[3],
@@ -580,7 +825,6 @@ public int addUser(String firstName, String lastName, String username, String pa
 				}
 			}
 			
-			System.out.println(results);
 			return results; // returns the list of matching universities with its attributes
 		}
 	
