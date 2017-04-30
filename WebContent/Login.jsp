@@ -58,7 +58,7 @@ background-color:#f1f1c1;
 </header>
 <div class="container">
 <div class="content">
-<marquee>Welcome Back Mario Great User!</marquee>
+<h3><marquee>Welcome Back Mario Great User!</marquee></h3>
 <h2>Login</h2>
 <form method="post" action="Login_action.jsp" name="Log in" ><br>
 <table style="text-align: left; width: 266px; height: 200px; "
@@ -75,10 +75,11 @@ id="t01">
 <td style="vertical-align: top;"><input type="password" name="Password"> </td>
 </tr>
 
-<td style="vertical-align: top;"><input value="Log in"
-name="Log in" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top; "><input value="Login"
+name="Login" type="submit" style="color: white; background-color:black; padding:3px; float:left" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td style="vertical-align: top;"><input value="Cancel"
-name="Reset" type="reset"></td>
+name="Reset" type="reset" style="color: white; background-color:black; padding:3px;float: right;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top;"></td>
 </tr>
 </tbody>
 </table>

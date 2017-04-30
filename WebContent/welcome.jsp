@@ -103,10 +103,11 @@ id="t01">
 <td style="vertical-align: top;"><input type="password" name="Password"> </td>
 </tr>
 
-<td style="vertical-align: top;"><input value="Create Account"
-name="Signup" type="submit" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top; "><input value="Create Account"
+name="Signup" type="submit" style="color: white; background-color:black; padding:3px; float:left" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td style="vertical-align: top;"><input value="Cancel"
-name="Reset" type="reset"></td>
+name="Reset" type="reset" style="color: white; background-color:black; padding:3px;float: right;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top;"></td>
 </tr>
 </tbody>
 </table>

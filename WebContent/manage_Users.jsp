@@ -41,19 +41,61 @@ nav li a{
 	color: white;
 	 text-decoration: none;
 }
-.content h2{
-color:black;
-background: #f1f1c1;
-padding:10px;
-border-radius:Spx;
-margin-bottom:20px;
+.content ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	clear: left;
+    background-color: #f1f1c1;
 }
-.content h2 a{
-text-decoration: none;
+.content li{
+float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #ff4719;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1c1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ff4719}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 table#t01{
 color:black;
 background-color:#f1f1c1;
+}
+h3{
+color: black;
 }
 </style>
 </head>
@@ -78,7 +120,17 @@ background-color:#f1f1c1;
 </form> -->
 <div class="container">
 <div class="content">
-<h2><a href="Admin_Menu.jsp">Main Menu</a></h2>
+<ul>
+<li class="dropdown">
+<a href="Admin_Menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
+    <div class="dropdown-content">
+      <a href="manage_Universities.jsp">Manage Universities</a>
+      <a href="manage_Users.jsp">Manage Users</a>
+    </div>
+  </li>
+</ul>
+<br>
+<h3>Manage Users</h3>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2" id="t01">
 <tbody>
@@ -120,7 +172,7 @@ Edit</td>
          	<% for(int c = 0;c<usrList.size();c++) { %>
          	<td style="vertical-align: top;">
 <form method="post" action="Edit_Admin.jsp" name="Edit">
-    <input name="Edit" value="Edit" type="submit">
+    <input name="Edit" value="Edit" type="submit" style="color: white; background-color:black; padding:3px; float:center">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
     <input name="Firstname" value="<%= usrList.get(c).getFirstName()%>" type="hidden">
     <input name="Lastname" value="<%= usrList.get(c).getLastName()%>" type="hidden">
@@ -138,19 +190,22 @@ Edit</td>
                 <td style="vertical-align: top;">
 
 <form >
-      <input name="Deactive" value="Deactivate" type="submit" onclick="if (confirm('Are you sure you want to deactivate this account?')) { form.method='post'; form.action='Deactive_Admin.jsp'; } else { return false; }">
+      <input name="Deactive" value="Deactivate" type="submit" onclick="if (confirm('Are you sure you want to deactivate this account?')) { form.method='post'; form.action='Deactive_Admin.jsp'; } else { return false; }" 
+      style="color: white; background-color:black; padding:3px; float:center">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
    
 </form>
 <td style="vertical-align: top;">
 <form >
-      <input name="Reactive" value="Reactivate" type="submit" onclick="if (confirm('Are you sure you want to reactivate?')) { form.method='post'; form.action='Reactive_Admin.jsp'; } else { return false; }">
+      <input name="Reactive" value="Reactivate" type="submit" onclick="if (confirm('Are you sure you want to reactivate?')) { form.method='post'; form.action='Reactive_Admin.jsp'; } else { return false; }"
+      style="color: white; background-color:black; padding:3px; float:center">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
    
 </form>
 <td style="vertical-align: top;">
 <form >
-      <input name="Delete" value="Delete" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='Delete_Admin.jsp'; } else { return false; }">
+      <input name="Delete" value="Delete" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='Delete_Admin.jsp'; } else { return false; }"
+      style="color: white; background-color:black; padding:3px; float:center">
     <input name="Username" value="<%= usrList.get(c).getUsername()%>" type="hidden">
    
 </form>
