@@ -69,7 +69,7 @@ margin-bottom:20px;
 <nav>
 <li><a href="LogOff.jsp">Logout</a></li>
 </nav>
-<h1>Choose Your College</h1>
+<h1>Choose My College</h1>
 </div>
 </header>
 <!-- <form method="post" action="LogOff.jsp" name="LogOff">
