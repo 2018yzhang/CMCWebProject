@@ -244,16 +244,16 @@ public int addUser(String firstName, String lastName, String username, String pa
   }
   /**
    * To delete user-admin only.
-   * @param username the username of the user to be deleted - Yidan
+   * @param schoolName the schoolName of the user to be deleted 
    * @throws IllegalArgumentException if the account has already deactivated or it does not exist
    * @return true if delete successfully
    */
   public boolean deleteUniversity(String schoolName){
 	  int i = univLib.university_deleteUniversity(schoolName);
-	 if(i==-1){
-		 return false;
+	 if(i!=-1){
+		 return true;
 	 }
-	 return true;
+	 return false;
   }
   /**
    * This method edits a specific university - admin only. - Yidan
