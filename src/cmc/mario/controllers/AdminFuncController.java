@@ -150,12 +150,12 @@ public AdminFuncController(Admin adm, DBController dbContr) {
 		   * @param popMajor a list of popular majors at university
 	 * @return true if add successfully, otherwise false
 	 */
-  public boolean addUniversity(String school, String state, String location, String control, int numberOfStudents, int percentFemales, int SATVerbal, int SATMath, 
-		  int expenses, int percentFinancialAid, int numberOfApplicants, int percentAdmitted, int percentEnrolled, 
-		  double academicsScale, double socialScale, double qualityOfLifeScale, String[] popMajors){
+  public boolean addUniversity(String school, String state, String location, String control, String numOfStudents, String perFemales, String SATVerb, String SatMath, 
+		  String exp, String perFinancialAid, String numOfApplicants, String perAdmitted, String perEnrolled, 
+		  String acadeScale, String soScale, String qualOfLifeScale, String[] popMajors){
     return this.dbContr.addUniversity(school, state, location, control, 
-			  numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, 
-			  numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale,popMajors);
+			  numOfStudents, perFemales, SATVerb, SatMath, exp, perFinancialAid, 
+			  numOfApplicants, perAdmitted, perEnrolled, acadeScale, soScale, qualOfLifeScale,popMajors);
   }
   
   /**

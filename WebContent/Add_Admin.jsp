@@ -177,29 +177,6 @@ name="Reset" type="reset" style="color: white; background-color:black; padding:3
 <br>
 </form>
 <br>
-<%	
-String anyErrors = request.getParameter("Error");
-
-if (anyErrors!=null&&anyErrors.equals("1")){
-	out.println("<script type=\"text/javascript\">");
-	   out.println("alert('Deactive Error');");
-	   out.println("window.location='manage_Users.jsp';");
-	   out.println("</script>");
-}
-if(anyErrors!=null&&anyErrors.equals("2")){
-out.println("<script type=\"text/javascript\">");
-out.println("alert('The type of user can only be 'u'(user) or 'a'(admin)!');");
-out.println("window.location='Add_Admin.jsp';");
-out.println("</script>");
-}
-if (anyErrors!=null&&anyErrors.equals("3")){
-	 out.println("<script type=\"text/javascript\">");
-	   out.println("alert('Unknown Error');");
-	   out.println("window.location='Add_Admin.jsp';");
-	   out.println("</script>");
-}
-
-%>
 </div>
 </div>
 <footer>

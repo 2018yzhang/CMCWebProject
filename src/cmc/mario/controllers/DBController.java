@@ -216,19 +216,158 @@ public int addUser(String firstName, String lastName, String username, String pa
     * @param popMajor which is the emphases majors of this school to update
     * @return true if it successfully
    */
-  public boolean addUniversity(String school, String state, String location, String control, int numberOfStudents, int percentFemales, int SATVerbal, int SATMath, 
-		  int expenses, int percentFinancialAid, int numberOfApplicants, int percentAdmitted, int percentEnrolled, 
-		  double academicsScale, double socialScale, double qualityOfLifeScale, String[] popMajors){
+  public boolean addUniversity(String school, String state, String location, String control, String numOfStudents, String perFemales, String SATVerb, String SatMath, 
+		  String exp, String perFinancialAid, String numOfApplicants, String perAdmitted, String perEnrolled, 
+		  String acadeScale, String soScale, String qualOfLifeScale, String[] popMajors){
+	  for(int i=0;i<school.length();i++){
+			if(Character.isLetter(school.charAt(i))){
+				continue;
+			}
+			else{
+				throw new IllegalArgumentException("The input of name cannot include any number or symbol!");
+			}
+		}
+		for(int i=0;i<state.length();i++){
+			if(Character.isLetter(state.charAt(i))){
+				continue;
+			}
+			else{
+				throw new IllegalArgumentException("The input of state cannot include any number or symbol!");
+			}
+		}
+		for(int i=0;i<location.length();i++){
+			if(Character.isLetter(location.charAt(i))){
+				continue;
+			}
+			else{
+				throw new IllegalArgumentException("The input of location cannot include any number or symbol!");
+			}
+		}
+		for(int i=0;i<control.length();i++){
+			if(Character.isLetter(control.charAt(i))){
+				continue;
+			}
+			else{
+				throw new IllegalArgumentException("The input of control cannot include any number or symbol!");
+			}
+		}
+	  int numberOfStudents=-1,  percentFemales=-1, SATVerbal=-1,SATMath=-1, 
+	  expenses=-1,  percentFinancialAid=-1, numberOfApplicants=-1,  percentAdmitted=-1, percentEnrolled=-1;
+	  double academicsScale=-1.0, socialScale=-1.0,  qualityOfLifeScale=-1.0;
+	  try{
+			if(numOfStudents!="")
+			{
+				numberOfStudents = Integer.parseInt(numOfStudents);
+				if(numberOfStudents<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+		 	try{
+			if(perFemales!="")
+			{
+				percentFemales = Integer.parseInt(perFemales);
+				if(percentFemales<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+		 	try{
+			if(SATVerb!="")
+			{
+				SATVerbal = Integer.parseInt(SATVerb);
+				if(SATVerbal<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(SatMath!="")
+			{
+				SATMath = Integer.parseInt(SatMath);
+				if(SATMath<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(exp!="")
+			{
+				expenses = Integer.parseInt(exp);
+				if(expenses<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(perFinancialAid!="")
+			{
+				percentFinancialAid = Integer.parseInt(perFinancialAid);
+				if(percentFinancialAid<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(numOfApplicants!="")
+			{
+				numberOfApplicants = Integer.parseInt(numOfApplicants);
+				if(numberOfApplicants<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(perAdmitted!="")
+			{
+				percentAdmitted = Integer.parseInt(perAdmitted);
+				if(percentAdmitted<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(perEnrolled!="")
+			{
+				percentEnrolled = Integer.parseInt(perEnrolled);
+				if(percentEnrolled<-1){
+					throw new IllegalArgumentException("Number can't be negative!");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(acadeScale!="")
+			{
+				academicsScale = Double.parseDouble(acadeScale);
+				if(academicsScale<-1||academicsScale==0){
+					throw new IllegalArgumentException("Number can't be negative or zero!");
+				}
+				if(academicsScale>5){
+					throw new IllegalArgumentException("The scale can't be more than 5");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(soScale!="")
+			{
+				socialScale = Double.parseDouble(soScale);
+				if(socialScale<-1||socialScale==0){
+					throw new IllegalArgumentException("Number can't be negative or zero!");
+				}
+				if(socialScale>5){
+					throw new IllegalArgumentException("The scale can't be more than 5");
+				}
+			}}catch(NumberFormatException ne){}
+			try{
+			if(qualOfLifeScale!="")
+			{
+				qualityOfLifeScale = Double.parseDouble(qualOfLifeScale);
+				if(qualityOfLifeScale<-1||qualityOfLifeScale==0){
+					throw new IllegalArgumentException("Number can't be negative or zero!");
+				}
+				if(qualityOfLifeScale>5){
+					throw new IllegalArgumentException("The scale can't be more than 5");
+				}
+			}}catch(NumberFormatException ne){}
 	  University u = this.viewSpecificSchool(school);
 	  if(u.getSchoolName()!=null){
-		  return false;
+		  throw new IllegalArgumentException("Excisted School!");
 	  }
 	  int i =univLib.university_addUniversity(school, state, location, control, 
 			  numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, 
 			  numberOfApplicants, percentAdmitted, percentEnrolled, (int)academicsScale, (int)socialScale, (int)qualityOfLifeScale);
 	  if(!(i==1)){
-		  return false;
-		  
+		  throw new IllegalArgumentException("Unknown Error!");
 	  }
 
     return true;
