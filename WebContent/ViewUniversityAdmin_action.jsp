@@ -1,7 +1,5 @@
 <%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <%
-	Account a = (Account)session.getAttribute("a");
-	AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
 	int numOfStu1,perFem1,satVerbal1,satMath1,price1,finAid1,numOfApp1,perAdmit1,perEnroll1;
 	double academicScale1,socialScale1,lifeScale1;
 	boolean noName = false;
@@ -40,9 +38,9 @@
 		  	academicScale1=Double.parseDouble(academicScale);
 		 
 
-	DBController db = new DBController();
-	boolean editComplete = db.editUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1);
-	db.setEmphasisForUniversity(schoolName, poplist);
+	AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
+	boolean editComplete = ac.editUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1);
+	ac.setEmphasisForUniversity(schoolName, poplist);
 	if(editComplete == true){
 		response.sendRedirect("ViewUniversities.jsp");}
 	else{

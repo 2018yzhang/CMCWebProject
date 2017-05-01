@@ -147,7 +147,7 @@ background-color:#f1f1c1;
   </li>
 </ul>
 <tr align="center"><br>
-<h3>View Details with Recommendation Universities</h3>
+<h3>View Saved School</h3>
 <table style="text-align: left; width: 500px; height: 350px;"
 border="1" id="t01">
 <tbody>

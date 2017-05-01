@@ -93,6 +93,9 @@ public AdminFuncController(Admin adm, DBController dbContr) {
   public int editUser(String firstName, String lastName, String username, String password, char type, char status){
     return this.dbContr.editUser(firstName, lastName,username, password, type, status);
   }
+  public void setEmphasisForUniversity(String universityName,String[] list){
+	   this.dbContr.setEmphasisForUniversity(universityName, list);
+  }
   /**
    * View a specific user profile including first name, last name, username, password, type, status
    * @param userName of the user
