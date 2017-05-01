@@ -119,6 +119,9 @@ public AdminFuncController(Admin adm, DBController dbContr) {
   public boolean delateUser(String username){
 	  return this.dbContr.delateUser(username);
   }
+  public boolean deleteUniversity(String schoolName){
+	  return this.dbContr.deleteUniversity(schoolName);
+  }
   /**
    * To view the list of universities
    * @return list of universities

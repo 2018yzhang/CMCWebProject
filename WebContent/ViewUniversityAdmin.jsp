@@ -78,7 +78,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">School Name<br>
 </td>
-<td style="vertical-align: top;"><input name="SchoolName" value=<%=schoolName%> readonly >
+<td style="vertical-align: top;"><input name="SchoolName" value=<%=schoolName%>  >
 </td>
 </tr>
 <tr>
@@ -178,11 +178,7 @@ name="Reset" type="reset"></td>
 </tbody>
 </table>
 <br>
-</form>
-<form method="post" action="DeleteUniversityAdmin.jsp" name="Delete">
-    <input name="Delete" type="submit" value="delete">
-       <input name="SchoolName" value="<%= schoolName%>" type="hidden">
-</form>
+
 <br>
 </body>
 </html>

@@ -89,6 +89,12 @@ List<University> list = db.getUniversities();
 
 </form>
 </td>
+<td>
+<form method="post" action="DeleteUniversityAdmin.jsp" name="Delete">
+    <input name="Delete" type="submit" value="delete">
+       <input name="SchoolName1" value="<%= list.get(i).getSchoolName()%>" type="hidden">
+</form>
+</td>
 
 
 </tr>
