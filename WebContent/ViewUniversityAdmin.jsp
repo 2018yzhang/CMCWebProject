@@ -245,7 +245,7 @@ border="1" >
 </td>
 <td style="vertical-align: top;">
 <% for(int i = 0; i<list.size();i++){%>
-	<input name="Emphasis" value=<%=list.get(i)%>>wowwowowowowowo
+	<input name="Emphasis" value=<%=list.get(i)%>>
 	
 	
 

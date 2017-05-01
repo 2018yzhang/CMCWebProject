@@ -455,7 +455,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 				  }
 			  }
 				int i = univLib.user_removeSchool(user.getUsername(),schoolName);
-				//System.out.println(i);
+	
 				if(i==1){
 					return true;
 				}

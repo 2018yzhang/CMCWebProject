@@ -27,6 +27,7 @@ import = "java.util.*"%>
 	String popMajors3 = request.getParameter("PopMajors4");
 	String popMajors4 = request.getParameter("PopMajors5");
 	String[] popList={popMajors,popMajors1,popMajors2,popMajors3,popMajors4};
+	
 
 
  	if(schoolName==""||schoolName==null){
@@ -126,8 +127,9 @@ import = "java.util.*"%>
 	//User u = new User(fname, lname,uname,password);
 	//session.setAttribute("username", uname);
 	DBController db = new DBController();
+	String[] popList1={"jing","thao","mogu","fun"};
 	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
- 	//db.setEmphasisForUniversity(schoolName, popList);
+ 	db.setEmphasisForUniversity(schoolName, popList);
 // 	if(a==false){
 
 // 		response.sendRedirect("AddUniversityAdmin.jsp");
