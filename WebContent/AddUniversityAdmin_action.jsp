@@ -128,10 +128,6 @@ import = "java.util.*"%>
 	//session.setAttribute("username", uname);
 	DBController db = new DBController();
 	boolean a = false;
-	System.out.println("School name is:   '"+schoolName+"'");
- 	System.out.println("School name is1:   '"+schoolName.equals("")+"'");
- 	System.out.println("School name is1:   '"+schoolName.equals(null)+"'");
- 	System.out.println("School name is1:   '"+schoolName.trim().isEmpty()+"'");
  	if(schoolName.equals("")||schoolName==null||schoolName.trim().isEmpty()){
 		a =false;
  	}
