@@ -2,7 +2,7 @@
 <%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.*"%>
 <html>
 <head>
-<title></title>
+<title>Edit </title>
 <style type="text/css">
 body{
 margin:0;
@@ -125,27 +125,8 @@ color: black;
 	String socialScale =request.getParameter("SocialScale");	
 	String lifeScale =request.getParameter("QualityofLife");
 	String popMajors = request.getParameter("Emphasis");
-	System.out.println(popMajors);
+	System.out.println("THIS SHIT IS ADD VIEW UIVERSITY ADMIN");
 	List<String> list= db.getEmphasesForUniversity(schoolName);
-
-
-System.out.println("********************************************************************************************************");
-	System.out.println("schoo1 Name VIEW UNIVERSITY ADMIN	:"+schoolName);
-	System.out.println("state1 VIEW UNIVERSITY ADMIN	:"+state);
-	System.out.println("location1 VIEW UNIVERSITY ADMIN	:"+location);
-	System.out.println("control1 VIEW UNIVERSITY ADMIN	:"+control);
-	System.out.println("numOfStu VIEW UNIVERSITY ADMIN	:"+numOfStu);
-		  	System.out.println("perFem VIEW UNIVERSITY ADMIN	:"+perFem);
-		  	System.out.println("satVerbal VIEW UNIVERSITY ADMIN	:"+satVerbal);
-		  	System.out.println("satMath VIEW UNIVERSITY ADMIN	:"+satMath);
-		  	System.out.println("price VIEW UNIVERSITY ADMIN	:"+price);
-		  	System.out.println("finAid VIEW UNIVERSITY ADMIN	:"+finAid);
-		  	System.out.println("numOfApp VIEW UNIVERSITY ADMIN	:"+numOfApp);
-		  	System.out.println("perAdmit VIEW UNIVERSITY ADMIN	:"+perAdmit);
-		  	System.out.println("perEnroll VIEW UNIVERSITY ADMIN	:"+perEnroll);
-		  	System.out.println("socialScale VIEW UNIVERSITY ADMIN	:"+socialScale);
-		  	System.out.println("lifeScale VIEW UNIVERSITY ADMIN	:"+lifeScale);
-		  	System.out.println("academicScale VIEW UNIVERSITY ADMIN	:"+academicScale);
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1")){
 	out.print("Unable to edit University");}
@@ -169,18 +150,15 @@ System.out.println("************************************************************
 <h1>Choose Your College</h1>
 </div>
 </header>
-<form method="post" action="ViewUniversities.jsp" name="Back">
-    <input name="Back" type="submit" value="Back">
-</form>
 <br>
 <form method="post" action="ViewUniversityAdmin_action.jsp" name="editUniversity"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
 <tr>
-<td style="vertical-align: top;">School Name<br>
+<td style="vertical-align: top;">schoolName<br>
 </td>
-<td style="vertical-align: top;"><input name="SchoolName" value=<%=schoolName%>  >
+<td style="vertical-align: top;"><input name="SchoolName" value=<%=schoolName%> type='text' readonly ><br>
 </td>
 </tr>
 <tr>
@@ -268,6 +246,8 @@ border="1" >
 <td style="vertical-align: top;">
 <% for(int i = 0; i<list.size();i++){%>
 	<input name="Emphasis" value=<%=list.get(i)%>>
+	
+	
 
 <% }%>
 
@@ -279,11 +259,20 @@ border="1" >
 
 
 <tr>
-<td style="vertical-align: top;"><input value="Edit"
-name="Edit" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<form method="post" action="ViewUniversityAdmin_action.jsp" name="Edit">
+    <input name="Edit" value="Edit" type="submit" style="color: white; background-color:black; padding:3px; float:center" >
+    <input name="SchoolName1" value="<%= schoolName%>" type='hidden' size='100'>
+
+ 
+
+    
+
+</form>
+</td>
 
 <td style="vertical-align: top;"><input value="Reset"
-name="Reset" type="reset"></td>
+name="Reset" type="reset" style="color: white; background-color:black; padding:3px; float:center"></td>
 
 </tr>
 
@@ -294,4 +283,7 @@ name="Reset" type="reset"></td>
 
 <br>
 </body>
+<footer>
+Copyright &copy; MarioChoose.com
+</footer>
 </html>

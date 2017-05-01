@@ -121,7 +121,7 @@ color: black;
 <li class="dropdown">
 <a href="Admin_Menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
     <div class="dropdown-content">
-      <a href="manage_Universities.jsp">Manage Universities</a>
+      <a href="ViewUniversities.jsp">Manage Universities</a>
       <a href="manage_Users.jsp">Manage Users</a>
     </div>
   </li>

@@ -11,33 +11,23 @@ import = "java.util.*"%>
 	String control =request.getParameter("Control");
 	String numOfStu =request.getParameter("NumOfStu");
 	String perFem =request.getParameter("PerFem");
-
 	String satVerbal =request.getParameter("SatVerbal");
-
 	String satMath =request.getParameter("SatMath");
-
 	String price =request.getParameter("Price");	
-
 	String finAid =request.getParameter("FinAid");
-
 	String numOfApp =request.getParameter("NumOfApp");
-
 	String perAdmit =request.getParameter("PerAdmit");
-
 	String perEnroll =request.getParameter("PerEnroll");
-
 	String academicScale =request.getParameter("AcademicScale");
-
 	String socialScale =request.getParameter("SocialScale");	
-
 	String lifeScale =request.getParameter("LifeScale");
-
 	String popMajors = request.getParameter("PopMajors1");
 	String popMajors1 = request.getParameter("PopMajors2");
 	String popMajors2 = request.getParameter("PopMajors3");
 	String popMajors3 = request.getParameter("PopMajors4");
 	String popMajors4 = request.getParameter("PopMajors5");
-	String[] popList={popMajors,popMajors1,popMajors2,popMajors3,popMajors4,popMajors4};
+	String[] popList={popMajors,popMajors1,popMajors2,popMajors3,popMajors4};
+
 
  	if(schoolName==""||schoolName==null){
 		response.sendRedirect("AddUniversityAdmin.jsp");
@@ -136,7 +126,9 @@ import = "java.util.*"%>
 	//User u = new User(fname, lname,uname,password);
 	//session.setAttribute("username", uname);
 	DBController db = new DBController();
+	System.out.println("THIS SHIT IS ADD UNIVERSITY ACTIOIN");
 	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
+ 	db.setEmphasisForUniversity(schoolName, popList);
 	if(a==false){
 
 		response.sendRedirect("AddUniversityAdmin.jsp");

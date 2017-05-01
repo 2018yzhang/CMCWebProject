@@ -5,7 +5,7 @@
 	int numOfStu1,perFem1,satVerbal1,satMath1,price1,finAid1,numOfApp1,perAdmit1,perEnroll1;
 	double academicScale1,socialScale1,lifeScale1;
 	boolean noName = false;
-	String schoolName =request.getParameter("SchoolName");
+	String schoolName =request.getParameter("SchoolName1");
 	String state = request.getParameter("State");
 	String location =request.getParameter("Location");
 	String control =request.getParameter("Control");
@@ -25,7 +25,7 @@
 	String socialScale =request.getParameter("SocialScale");	
 	String lifeScale =request.getParameter("QualityOfLife");
 	String popMajors = request.getParameter("Emphasis");
-
+	System.out.println("THIS SHIT IS VIEW UNIVERSITY ACTIOIN");
 
  		 numOfStu1 =Integer.parseInt(numOfStu);
 			 perFem1=Integer.parseInt(perFem);
@@ -39,27 +39,10 @@
 			 socialScale1=Double.parseDouble(socialScale);
 			 lifeScale1=Double.parseDouble(lifeScale);
 		  	academicScale1=Double.parseDouble(academicScale);
-		  	System.out.println("********************************************************************************************************");
-		  	System.out.println("schoo1 Name VIEW UNIVERSITY ADMIN:"+schoolName);
-		  	System.out.println("state1 VIEW UNIVERSITY ADMIN	:"+state);
-		  	System.out.println("location1 VIEW UNIVERSITY ADMIN	:"+location);
-		  	System.out.println("control1 VIEW UNIVERSITY ADMIN	:"+control);
-		  	System.out.println("numOfStu1 VIEW UNIVERSITY ADMIN	:"+numOfStu1);
-		  	System.out.println("perFem1 VIEW UNIVERSITY ADMIN	:"+perFem1);
-		  	System.out.println("satVerbal1 VIEW UNIVERSITY ADMIN:"+satVerbal1);
-		  	System.out.println("satMath1 VIEW UNIVERSITY ADMIN	:"+satMath1);
-		  	System.out.println("price1 VIEW UNIVERSITY ADMIN	:"+price1);
-		  	System.out.println("finAid1 VIEW UNIVERSITY ADMIN	:"+finAid1);
-		  	System.out.println("numOfApp1 VIEW UNIVERSITY ADMIN	:"+numOfApp1);
-		  	System.out.println("perAdmit1 VIEW UNIVERSITY ADMIN	:"+perAdmit1);
-		  	System.out.println("perEnroll1 VIEW UNIVERSITY ADMIN:"+perEnroll1);
-		  	System.out.println("socialScale1 VIEW UNIVERSITY ADMIN:"+socialScale1);
-		  	System.out.println("lifeScale1 VIEW UNIVERSITY ADMIN:"+lifeScale1);
-		  	System.out.println("academicScale1 VIEW UNIVERSITY ADMIN:"+academicScale1);
+		 
 
 	DBController db = new DBController();
 	boolean editComplete = db.editUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1);
-	System.out.println("DID IT FREAKING ADD"+editComplete);
 	if(editComplete == true){
 		response.sendRedirect("ViewUniversities.jsp");}
 	else{

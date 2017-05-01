@@ -103,6 +103,7 @@ color: black;
 }
 </style>
 
+</head>
 <body>
 <header>
 <div class="container">
@@ -115,9 +116,6 @@ color: black;
 <h1>Choose Your College</h1>
 </div>
 </header>
-<!-- <form method="post" action="LogOff.jsp" name="LogOff">
-    <input name="Logout" type="submit" value="Logout">
-</form> -->
 <div class="container">
 <div class="content">
 <ul>
@@ -129,24 +127,21 @@ color: black;
     </div>
   </li>
 </ul>
-
-</head>
+<br>
 <br>
 View Universities form:<br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
+<tr align="center">
+<td colspan="18" rowspan="1" style="vertical-align: top;"><a
+href="AddUniversityAdmin.jsp">ADD A UNIVERSITY</a>
+</td> </tr>
 <%
 DBController db = new DBController();
 List<University> list = db.getUniversities();
 %>
-<tr align="center">
-<td colspan="18" rowspan="1" style="vertical-align: top;"><a
-href="AddUniversityAdmin.jsp">ADD A UNIVERSITY</a>
-</td>
-
 <tr>
-
 <td>School Name</td>
 <td>State</td>
 <td>Location</td>
@@ -187,8 +182,8 @@ href="AddUniversityAdmin.jsp">ADD A UNIVERSITY</a>
 <td><%=list.get(i).getLifeScale() %></td>
 <td>
 <form method="post" action="ViewUniversityAdmin.jsp" name="Edit">
-    <input name="Edit" value="Edit" type="submit">
-    <input name="SchoolName" value="<%= list.get(i).getSchoolName()%>" type="hidden">
+    <input name="Edit" value="Edit" type="submit" style="color: white; background-color:black; padding:3px; float:center" >
+    <input name="SchoolName" value="<%= list.get(i).getSchoolName()%>" type='hidden' size='100'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input name="State" value="<%= list.get(i).getState()%>" type="hidden">
     <input name="Location" value="<%= list.get(i).getLocation()%>" type="hidden">
     <input name="Control" value="<%=list.get(i).getControl()%>" type="hidden">
@@ -204,32 +199,27 @@ href="AddUniversityAdmin.jsp">ADD A UNIVERSITY</a>
     <input name="AcademicScale" value="<%= list.get(i).getAcademicScale()%>" type="hidden">
     <input name="SocialScale" value="<%= list.get(i).getSocialScale()%>" type="hidden">
     <input name="QualityofLife" value="<%=list.get(i).getLifeScale()%>" type="hidden">
-
-    <input name="Emphasis" value="<%= list.get(i).getPopMajors()%>" type="hidden">
+    <input name="Emphasis" value="<%= list.get(i).getPopMajors()%>" type="text">
 
     
 
 </form>
 </td>
 <td>
+
 <form >
       <input name="Delete" value="Delete" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='DeleteUniversityAdmin.jsp'; } else { return false; }"
       style="color: white; background-color:black; padding:3px; float:center">
     <input name="SchoolName1" value="<%= list.get(i).getSchoolName()%>" type="hidden">
-   
-</form>
+   </form>
 </td>
-
 
 </tr>
 <%} %>
 
-</tbody>
 </table>
-</div>
-</div>
-<footer>
-Copyright &copy; MarioChoose.com
-</footer>
+<br>
+<br>
 </body>
 </html>
+

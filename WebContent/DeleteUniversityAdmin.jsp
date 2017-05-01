@@ -12,7 +12,6 @@
 	 AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
 	 DBController db = new DBController();
 	 boolean r = db.deleteUniversity(uname);
-	 System.out.println(r);
 	 String msg ="";
 	 if(r==true){
 		 response.sendRedirect("ViewUniversities.jsp");
