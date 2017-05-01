@@ -4,6 +4,8 @@
 	import="java.util.ArrayList"%>
 
 <html>
+<head>
+<title>Search Results</title>
 <style type="text/css">
 body{
 margin:0;
@@ -26,7 +28,7 @@ header, footer {
 }
 .logo{
 float:left;
-margin-top:10px;
+margin-top:-30px;
 url:logo.PNG;
 }
 nav{
@@ -44,7 +46,31 @@ nav li a{
 	color: white;
 	 text-decoration: none;
 }
-.content h2{
+.content ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	clear: left;
+    background-color: #f1f1c1;
+}
+.content li{
+float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #ff4719;
+}
+
+li.dropdown {
+    display: inline-b.content h2{
 color:black;
 background: #f1f1c1;
 padding:10px;
@@ -57,15 +83,43 @@ margin-bottom:20px;
 }
 .content ul a{
  text-decoration: none;
+}lock;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1c1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ff4719}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+table#t01{
+color:black;
+background-color:#f1f1c1;
+}
+
 </style>
 </head>
-
 <body>
 <header>
 <div class="container">
 <div class="logo">
-	<img src="welcome2.png" width="65" alt="" title="">
+	<img src="logo.PNG" width="65" alt="" title="">
 </div>
 <nav>
 <li><a href="LogOff.jsp">Logout</a></li>
@@ -76,16 +130,20 @@ margin-bottom:20px;
 </head>
 <div class="container">
 <div class="content">
-<h2><a href="User_menu.jsp">Main Menu</a></h2>
-<tbody>
-<tr align="center">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-<body>
+<ul>
+<li class="dropdown">
+<a href="User_menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
+    <div class="dropdown-content">
+      <a href="Search_schools.jsp">Search</a>
+      <a href="Manage_savedschoolspageUser.jsp">Manage Saved Schools</a>
+       <a href="Manage_myprofileUser.jsp">Manage Personal Profile</a>
+    </div>
+  </li>
+</ul>
+<tr align="center"><br>
+<h3>Search Results</h3>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
-cellspacing="2">
-<tbody>
+cellspacing="2" id="t01">
 <%
 List<University> ayee = (List<University>)request.getSession().getAttribute("results");
 //System.out.println(ayee.size());
@@ -101,13 +159,13 @@ for(int i =0; i<ayee.size();i++){
 
 <tr>
 <td style="vertical-align: top;"><form method="post" action="Save_school.jsp" name="Save"><input value="Save"
-name="Save" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="School" SIZE="60" value="<%=x.getSchoolName()%>" type="hidden"><br></form>
+name="Save" type="submit" style="color: white; background-color:black; padding:3px; float:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="School" SIZE="60" value="<%=x.getSchoolName()%>" type="hidden"><br></form>
 </td>
 <td style="vertical-align: top;"> <%=x.getSchoolName()%><br>
 </td>
 
 <td style="vertical-align: top;"><form method="post" action="View_specificschool.jsp" name="View"><input value="View"
-name="View" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+name="View" type="submit" style="color: white; background-color:black; padding:3px; float:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input name="SchoolName" value="<%=x.getSchoolName()%>" type="hidden" >
      <input name="State" value=<%=x.getState()%> type="hidden">
       <input name="Location" value=<%=x.getLocation()%> type="hidden">
@@ -128,10 +186,13 @@ name="View" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </td>
 </tr>
 <%} %>
-
-
 </tbody>
 
 </table>
+</div>
+</div>
+<footer>
+Copyright &copy; MarioChoose.com
+</footer>
 </body>
 </html>

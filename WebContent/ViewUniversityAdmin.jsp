@@ -24,7 +24,7 @@ header, footer {
 }
 .logo{
 float:left;
-margin-top:10px;
+margin-top:-30px;
 url:logo.PNG;
 }
 nav{
@@ -102,7 +102,6 @@ color: black;
 </head>
 <%
 
-	out.print("View/Edit University");
 	AdminFuncController ac = (AdminFuncController)session.getAttribute("uc");
 	DBController db = new DBController();
 	int numOfStu1,perFem1,satVerbal1,satMath1,price1,finAid1,numOfApp1,perAdmit1,perEnroll1;
@@ -137,23 +136,31 @@ color: black;
 <header>
 <div class="container">
 <div class="logo">
-	<img src="welcom2.png" width="65" alt="" title="">
+	<img src="logo.PNG" width="65" alt="" title="">
 </div>
 <nav>
 <li><a href="LogOff.jsp">Logout</a></li>
 
 </nav>
-<nav>
-<li><a href="ViewUniversities.jsp">Back</a></li>
-
-</nav>
 <h1>Choose Your College</h1>
 </div>
 </header>
+<div class="container">
+<div class="content">
+<ul>
+<li class="dropdown">
+<a href="Admin_Menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
+    <div class="dropdown-content">
+      <a href="ViewUniversities.jsp">Manage Universities</a>
+      <a href="manage_Users.jsp">Manage Users</a>
+    </div>
+  </li>
+</ul>
+<h3>View/Edit University</h3>
 <br>
 <form method="post" action="ViewUniversityAdmin_action.jsp" name="editUniversity"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
-border="1" >
+border="1" id="t01">
 <tbody>
 <tr>
 <td style="vertical-align: top;">schoolName<br>

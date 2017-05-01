@@ -25,7 +25,7 @@ header, footer {
 }
 .logo{
 float:left;
-margin-top:10px;
+margin-top:-30px;
 url:logo.PNG;
 }
 nav{
@@ -105,7 +105,7 @@ color: black;
 <header>
 <div class="container">
 <div class="logo">
-	<img src="welcom2.png" width="65" alt="" title="">
+	<img src="logo.PNG" width="65" alt="" title="">
 </div>
 <nav>
 <li><a href="LogOff.jsp">Logout</a></li>

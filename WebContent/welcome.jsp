@@ -26,7 +26,7 @@ header, footer {
 }
 .logo{
 float:left;
-margin-top:10px;
+margin-top:-30px;
 url:logo.PNG;
 }
 nav{
@@ -72,7 +72,7 @@ border:radius:10px;
 <header>
 <div class="container">
 <div class="logo">
-	<img src="welcom2.png" width="65" alt="" title="">
+	<img src="logo.PNG" width="65" alt="" title="">
 </div>
 <nav>
 <li><a href="Login.jsp">Login</a></li>
