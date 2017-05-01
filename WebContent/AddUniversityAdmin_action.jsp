@@ -126,9 +126,8 @@ import = "java.util.*"%>
 	//User u = new User(fname, lname,uname,password);
 	//session.setAttribute("username", uname);
 	DBController db = new DBController();
-	System.out.println("THIS SHIT IS ADD UNIVERSITY ACTIOIN");
 	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
- 	db.setEmphasisForUniversity(schoolName, popList);
+ 	//db.setEmphasisForUniversity(schoolName, popList);
 	if(a==false){
 
 		response.sendRedirect("AddUniversityAdmin.jsp");

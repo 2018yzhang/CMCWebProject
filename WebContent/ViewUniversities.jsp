@@ -199,7 +199,7 @@ List<University> list = db.getUniversities();
     <input name="AcademicScale" value="<%= list.get(i).getAcademicScale()%>" type="hidden">
     <input name="SocialScale" value="<%= list.get(i).getSocialScale()%>" type="hidden">
     <input name="QualityofLife" value="<%=list.get(i).getLifeScale()%>" type="hidden">
-    <input name="Emphasis" value="<%= list.get(i).getPopMajors()%>" type="text">
+    <input name="Emphasis" value="<%= list.get(i).getPopMajors()%>" type="hidden">
 
     
 

@@ -125,7 +125,7 @@ color: black;
 	String socialScale =request.getParameter("SocialScale");	
 	String lifeScale =request.getParameter("QualityofLife");
 	String popMajors = request.getParameter("Emphasis");
-	System.out.println("THIS SHIT IS ADD VIEW UIVERSITY ADMIN");
+	
 	List<String> list= db.getEmphasesForUniversity(schoolName);
 	String anyErrors = request.getParameter("Error");
 	if (anyErrors!=null&&anyErrors.equals("1")){
@@ -245,7 +245,7 @@ border="1" >
 </td>
 <td style="vertical-align: top;">
 <% for(int i = 0; i<list.size();i++){%>
-	<input name="Emphasis" value=<%=list.get(i)%>>
+	<input name="Emphasis" value=<%=list.get(i)%>>wowwowowowowowo
 	
 	
 

@@ -24,9 +24,7 @@
 	String academicScale =request.getParameter("AcademicScale");
 	String socialScale =request.getParameter("SocialScale");	
 	String lifeScale =request.getParameter("QualityOfLife");
-	String popMajors = request.getParameter("Emphasis");
-	System.out.println("THIS SHIT IS VIEW UNIVERSITY ACTIOIN");
-
+	//String popMajors = request.getParameter("Emphasis");
  		 numOfStu1 =Integer.parseInt(numOfStu);
 			 perFem1=Integer.parseInt(perFem);
 			 satVerbal1=Integer.parseInt(satVerbal);
