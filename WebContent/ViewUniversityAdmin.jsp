@@ -159,13 +159,13 @@ color: black;
 <h3>View/Edit University</h3>
 <br>
 <form method="post" action="ViewUniversityAdmin_action.jsp" name="editUniversity"><br>
-<table style="text-align: left; width: 266px; height: 228px;"
+<table style="text-align: left; width: 400px; height: 228px;"
 border="1" id="t01">
 <tbody>
 <tr>
 <td style="vertical-align: top;">schoolName<br>
 </td>
-<td style="vertical-align: top;"><input name="SchoolName" value=<%=schoolName%> type='text' readonly ><br>
+<td style="vertical-align: top;"><input name="SchoolName" SIZE="60" style="width: 250px"; value="<%=schoolName%>" type='text' readonly ><br>
 </td>
 </tr>
 <tr>
