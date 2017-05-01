@@ -230,16 +230,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 		  return false;
 		  
 	  }
-	  String pop ="";
-	  for(int k=0; k<popMajors.length; k++){
-		  pop +=popMajors[k]+", ";
-	  }
-	  System.out.println(pop);
-	  int j =univLib.university_addUniversityEmphasis(school, pop);
-	  if(j!=1){
-		  System.out.println("e");
-		  return false;
-	  }
+
     return true;
   }
   /**
@@ -252,13 +243,13 @@ public int addUser(String firstName, String lastName, String username, String pa
 
 
 	  
-	  System.out.println(schoolName);
+
 	  this.deleteEmphasis(schoolName);
 	  int i = univLib.university_deleteUniversity(schoolName);
 	  
-	  System.out.println(i);
+
 	  University u = this.viewSpecificSchool(schoolName);
-	  System.out.println(u.getSchoolName());
+
 	  
 
 	 if(i!=1){

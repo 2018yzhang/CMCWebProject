@@ -128,14 +128,14 @@ import = "java.util.*"%>
 	DBController db = new DBController();
 	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
  	//db.setEmphasisForUniversity(schoolName, popList);
-	if(a==false){
+// 	if(a==false){
 
-		response.sendRedirect("AddUniversityAdmin.jsp");
-		out.println("University has not been added");
+// 		response.sendRedirect("AddUniversityAdmin.jsp");
+// 		out.println("University has not been added");
 	
-	}
-	else{
-		out.println("University has been successfully added");
+// 	}
+// 	else{
+// 		out.println("University has been successfully added");
 		response.sendRedirect("ViewUniversities.jsp");
-	}
+// 	}
 %>
