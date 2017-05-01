@@ -742,7 +742,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(numMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 				 	try{
 					if(numOfStuStart!="")
 					{
@@ -750,7 +750,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(numMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 				 	try{
 					if(perFemStart!="")
 					{
@@ -758,7 +758,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(FemMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 				 	try{
 					if(perFemEnd!="")
 					{
@@ -766,7 +766,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(FemMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 				 	try{
 					if(satVerbalStart!="")
 					{
@@ -774,7 +774,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(VerbMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 				 	try{
 					if(satVerbalEnd!="")
 					{
@@ -782,7 +782,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(VerbMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(satMathStart!="")
 					{
@@ -790,7 +790,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(MathMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(satMathEnd!="")
 					{
@@ -798,7 +798,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(MathMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(priceStart!="")
 					{
@@ -806,7 +806,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(expenMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(priceEnd!="")
 					{
@@ -814,7 +814,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(expenMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(finAidStart!="")
 					{
@@ -822,7 +822,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(AidMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(finAidEnd!="")
 					{
@@ -830,7 +830,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(AidMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(numOfAppStart!="")
 					{
@@ -838,7 +838,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(apMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(numOfAppEnd!="")
 					{
@@ -846,7 +846,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(apMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(perAdmitStart!="")
 					{
@@ -854,7 +854,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(admMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(perAdmitEnd!="")
 					{
@@ -862,7 +862,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(admMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(perEnrollStart!="")
 					{
@@ -870,7 +870,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(enrMin<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(perEnrollEnd!="")
 					{
@@ -878,7 +878,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(enrMax<-1){
 							throw new IllegalArgumentException("Number can't be negative!");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(academicScaleStart!="")
 					{
@@ -889,7 +889,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(aScalMin>5){
 							throw new IllegalArgumentException("The scale can't be more than 5");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(academicScaleEnd!="")
 					{
@@ -900,7 +900,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(aScalMax>5){
 							throw new IllegalArgumentException("The scale can't be more than 5");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(socialScaleStart!="")
 					{
@@ -911,7 +911,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(socScalMin>5){
 							throw new IllegalArgumentException("The scale can't be more than 5");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(socialScaleEnd!="")
 					{
@@ -922,7 +922,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(socScalMax>5){
 							throw new IllegalArgumentException("The scale can't be more than 5");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(lifeScaleStart!="")
 					{
@@ -933,7 +933,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(qScalMin>5){
 							throw new IllegalArgumentException("The scale can't be more than 5");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 					try{
 					if(lifeScaleEnd!="")
 					{
@@ -944,7 +944,7 @@ public int addUser(String firstName, String lastName, String username, String pa
 						if(qScalMax>5){
 							throw new IllegalArgumentException("The scale can't be more than 5");
 						}
-					}}catch(NumberFormatException ne){}
+					}}catch(NumberFormatException ne){throw new IllegalArgumentException("It's not a numberic format");}
 				
 			 for(String[] arr: univList){
 				 if((arr[0].contains(schoolName)|| (schoolName == "")) 
