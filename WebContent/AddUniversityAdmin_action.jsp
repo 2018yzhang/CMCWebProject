@@ -30,8 +30,8 @@ import = "java.util.*"%>
 	
 
 
- 	if(schoolName==""||schoolName==null){
-		response.sendRedirect("AddUniversityAdmin.jsp");
+ 	if(schoolName==""||schoolName==null||schoolName==""){
+		
  	}
  	 if(state==""||state==null){
  		state=Integer.toString(-1);
@@ -127,17 +127,27 @@ import = "java.util.*"%>
 	//User u = new User(fname, lname,uname,password);
 	//session.setAttribute("username", uname);
 	DBController db = new DBController();
-	String[] popList1={"jing","thao","mogu","fun"};
-	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
- 	db.setEmphasisForUniversity(schoolName, popList);
-// 	if(a==false){
-
-// 		response.sendRedirect("AddUniversityAdmin.jsp");
-// 		out.println("University has not been added");
+	boolean a = false;
+	System.out.println("School name is:   '"+schoolName+"'");
+ 	System.out.println("School name is1:   '"+schoolName.equals("")+"'");
+ 	System.out.println("School name is1:   '"+schoolName.equals(null)+"'");
+ 	System.out.println("School name is1:   '"+schoolName.trim().isEmpty()+"'");
+ 	if(schoolName.equals("")||schoolName==null||schoolName.trim().isEmpty()){
+		a =false;
+ 	}
+ 	else{
+ 		 a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
+ 		db.setEmphasisForUniversity(schoolName, popList);
+ 	}
 	
-// 	}
-// 	else{
-// 		out.println("University has been successfully added");
+	if(a==false){
+
+		response.sendRedirect("AddUniversityAdmin.jsp");
+		out.println("University has not been added");
+	
+	}
+	else{
+		out.println("University has been successfully added");
 		response.sendRedirect("ViewUniversities.jsp");
-// 	}
+	}
 %>
