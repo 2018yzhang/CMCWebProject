@@ -1,22 +1,136 @@
 <%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" 
 import ="java.util.*"%>
-<%
-%>
 <html>
 <head>
-
 <title>Manage Universities  Form</title>
-<form method="post" action="LogOff.jsp" name="LogOff">
-    <input name="Logout" type="submit" value="Logout">
-</form>
+<style type="text/css">
+body{
+margin:0;
+padding:0;
+font-family:Titillium Web;
+color:darkgrey;
+background:#f3f3f3;
+}
+.container {
+    max-width:960px;
+    width:96%
+}
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+.logo{
+float:left;
+margin-top:10px;
+url:logo.PNG;
+}
+nav{
+float:right;
+line-height:70px;
+}
+nav li{
+display:inline-block;
+padding:5px 20px;
+margin-left:10px;
+background:#ff4719;
+line-height:normal;
+}
+nav li a{
+	color: white;
+	 text-decoration: none;
+}
+.content ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	clear: left;
+    background-color: #f1f1c1;
+}
+.content li{
+float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #ff4719;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1c1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ff4719}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+table#t01{
+color:black;
+background-color:#f1f1c1;
+}
+h3{
+color: black;
+}
+</style>
 </head>
 <body>
-<a href="AddUniversityAdmin.jsp">Add University</a> <br>
+<div class="container">
+<div class="logo">
+	<img src="welcom2.png" width="65" alt="" title="">
+</div>
+<nav>
+<li><a href="LogOff.jsp">Logout</a></li>
+</nav>
+<h1>Choose Your College</h1>
+</div>
+</header>
+<div class="container">
+<div class="content">
+<ul>
+<li class="dropdown">
+<a href="Admin_Menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
+    <div class="dropdown-content">
+      <a href="ViewUniversities.jsp">Manage Universities</a>
+      <a href="manage_Users.jsp">Manage Users</a>
+    </div>
+  </li>
+</ul>
 <br>
-View Universities form:<br>
+<h3>Manage Universities</h3>
+<br>
 <table style="text-align: left; width: 266px; height: 228px;"
-border="1" cellpadding="2" cellspacing="2">
+border="1" cellpadding="2" cellspacing="2" id="t01">
 <tbody>
+<tr><td colspan="10" rowspan="1" style="vertical-align: top; text-align: center;"><a
+href="AddUniversityAdmin.jsp">ADD University</a>
+</td></tr>
 <%
 DBController db = new DBController();
 List<University> list = db.getUniversities();
@@ -39,9 +153,6 @@ List<University> list = db.getUniversities();
 <td>Social Scale(1-5)</td>
 <td>Quality of Life(1-5)</td>
 
-
-
-
 <% for(int i = 0;i<list.size();i++){%>
 <tr>
 <td><%=list.get(i).getSchoolName()%></td>
@@ -62,7 +173,7 @@ List<University> list = db.getUniversities();
 <td><%=list.get(i).getLifeScale() %></td>
 <td>
 <form method="post" action="ViewUniversityAdmin.jsp" name="Edit">
-    <input name="Edit" value="Edit" type="submit">
+    <input name="Edit" value="Edit" type="submit" style="color: white; background-color:black; padding:3px; float:center">
     <input name="SchoolName" value="<%= list.get(i).getSchoolName()%>" type="hidden">
     <input name="State" value="<%= list.get(i).getState()%>" type="hidden">
     <input name="Location" value="<%= list.get(i).getLocation()%>" type="hidden">
@@ -91,17 +202,19 @@ List<University> list = db.getUniversities();
 </td>
 <td>
 <form method="post" action="DeleteUniversityAdmin.jsp" name="Delete">
-    <input name="Delete" type="submit" value="delete">
+    <input name="Delete" type="submit" value="delete" style="color: white; background-color:black; padding:3px; float:center">
        <input name="SchoolName1" value="<%= list.get(i).getSchoolName()%>" type="hidden">
 </form>
 </td>
-
-
 </tr>
 <%} %>
 
 </table>
-<br>
-<br>
+</div>
+</div>
+<footer>
+Copyright &copy; MarioChoose.com
+</footer>
 </body>
 </html>
+

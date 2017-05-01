@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+<title>Search</title>
 <style type="text/css">
 body{
 margin:0;
@@ -42,7 +44,31 @@ nav li a{
 	color: white;
 	 text-decoration: none;
 }
-.content h2{
+.content ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	clear: left;
+    background-color: #f1f1c1;
+}
+.content li{
+float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #ff4719;
+}
+
+li.dropdown {
+    display: inline-b.content h2{
 color:black;
 background: #f1f1c1;
 padding:10px;
@@ -55,7 +81,36 @@ margin-bottom:20px;
 }
 .content ul a{
  text-decoration: none;
+}lock;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1c1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ff4719}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+table#t01{
+color:black;
+background-color:#f1f1c1;
+}
+
 </style>
 </head>
 
@@ -68,32 +123,28 @@ margin-bottom:20px;
 <nav>
 <li><a href="LogOff.jsp">Logout</a></li>
 </nav>
-<h1>Choose My College</h1>
+<h1>Choose Your College</h1>
 </div>
 </header>
-</head>
 <div class="container">
 <div class="content">
-<h2><a href="User_menu.jsp">Main Menu</a></h2>
-<tbody>
-<tr align="center">
-<br>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Search Menu</title>
-</head>
-<body>
-
-<form method="post" action="LogOff.jsp" name="LogOff">
-    <input name="Logout" type="submit" value="Logout">
-</form>
+<ul>
+<li class="dropdown">
+<a href="User_menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
+    <div class="dropdown-content">
+      <a href="Search_schools.jsp">Search</a>
+      <a href="Manage_savedschoolspageUser.jsp">Manage Saved Schools</a>
+       <a href="Manage_myprofileUser.jsp">Manage Personal Profile</a>
+    </div>
+  </li>
+</ul>
 <form method="post" action="search_action.jsp" name="SearchForSchools">
 <div style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
 style="font-family: URW Chancery L;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <big style="font-weight: bold;"><big><big>Search Menu</big></big></big></span><br>
 </div>
 <table style="text-align: left; width: 1623px; height: 622px;"
-border="1" cellpadding="2" cellspacing="2">
+border="1" cellpadding="2" cellspacing="2" id="t01">
 <tbody>
 <tr>
 <td style="vertical-align: top;">by SCHOOL NAME<br>
@@ -192,14 +243,19 @@ name="qScaleMin"> and <input name="qScaleMiax"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;"><input
-value="Search For Schools" name="searchForSchools" type="submit"><br>
+value="Search For Schools" name="searchForSchools" type="submit" style="color: white; background-color:black; padding:3px; float:center"><br>
 </td>
 <td style="vertical-align: top;"><input name="reset"
-value="reset" type="reset"><br>
+value="Cancel" type="reset" style="color: white; background-color:black; padding:3px; float:center"><br>
 </td>
 </tr>
 </tbody>
 </table>
 </form>
+</div>
+</div>
+<footer>
+Copyright &copy; MarioChoose.com
+</footer>
 </body>
 </html>

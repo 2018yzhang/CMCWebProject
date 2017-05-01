@@ -1,7 +1,7 @@
 <%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" import="java.util.List"%>
 <html>
 <head>
-<title></title>
+<title>Manage Saved School</title>
 <style type="text/css">
 body{
 margin:0;
@@ -42,19 +42,61 @@ nav li a{
 	color: white;
 	 text-decoration: none;
 }
-.content h2{
-color:black;
-background: #f1f1c1;
-padding:10px;
-border-radius:Spx;
-margin-bottom:20px;
+.content ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	clear: left;
+    background-color: #f1f1c1;
+}
+.content li{
+float: left;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-.content ul {
-	list-style-position:outside;
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #ff4719;
 }
-.content ul a{
- text-decoration: none;
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1c1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ff4719}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+table#t01{
+color:black;
+background-color:#f1f1c1;
+}
+h3{
+color: black;
 }
 </style>
 </head>
@@ -71,14 +113,20 @@ margin-bottom:20px;
 <h1>Choose Your College</h1>
 </div>
 </header>
-</head>
 <div class="container">
 <div class="content">
-<h2><a href="User_menu.jsp">Main Menu</a></h2>
-<tbody>
-<tr align="center">
-<br>
-</head>
+<ul>
+<li class="dropdown">
+<a href="User_menu.jsp" class="dropbtn"><strong>Main Menu</strong></a>
+    <div class="dropdown-content">
+      <a href="Search_schools.jsp">Search</a>
+      <a href="Manage_savedschoolspageUser.jsp">Manage Saved Schools</a>
+       <a href="Manage_myprofileUser.jsp">Manage Personal Profile</a>
+    </div>
+  </li>
+</ul>
+<h3>Saved School List</h3>
+
 <%
 	AccountUI ui = (AccountUI)session.getAttribute("ui");
 	AccountController acctCtr = ui.getAccountController();
@@ -88,13 +136,11 @@ margin-bottom:20px;
 	session.setAttribute("userCtr", userCtr );
 	List<University> univList = userCtr.viewSavedSchools();
 %>
-<body>
-<br>
-<table style="text-align: left; width: 1000px; height: 300px;"
-border="1" >
+<table style="text-align: left; width: 800px; height: 300px;"
+border="1" id="t01" >
 <tbody>
 <tr>
-<td top;><br>
+<td top;>
 </td>
 <td style="vertical-align: center;">School<br>
 </td>
@@ -103,14 +149,14 @@ border="1" >
          	<% for(int c = 0; c < univList.size();c++){  %>
          	<td style="vertical-align: top;">
 <form method="post" action="Remove_savedschool.jsp" name="Remove">
-    <input name="Remove" value="Remove from Saved Schools List" type="submit">
+    <input name="Remove" value="Remove" type="submit" style="color: white; background-color:black; padding:3px; float:center">
     <input name="School" SIZE="60" value="<%=univList.get(c).getSchoolName()%>" type="hidden">
 </form>
 </td>
                <td><%=univList.get(c).getSchoolName()%></td>
                 <td style="vertical-align: top;">
 <form method="post" action="View_savedschooldetailsactionUser.jsp" name="ViewSavedSchoolDetails">
-	<input name="ViewSavedSchoolDetails" value="View Saved School" type="submit">
+	<input name="ViewSavedSchoolDetails" value="View Saved School" type="submit" style="color: white; background-color:black; padding:3px; float:center">
   	<input name="SchoolName" value="<%=univList.get(c).getSchoolName()%>" type="hidden" >
      <input name="State" value=<%=univList.get(c).getState()%> type="hidden">
       <input name="Location" value=<%=univList.get(c).getLocation()%> type="hidden">
@@ -133,11 +179,14 @@ border="1" >
 </td>
 </tr>
 <% } 
-            %>
-           
+ %>
+<br>
 </tbody>
 </table>
-<br>
-<br>
+</div>
+</div>
+<footer>
+Copyright &copy; MarioChoose.com
+</footer>
 </body>
 </html>
