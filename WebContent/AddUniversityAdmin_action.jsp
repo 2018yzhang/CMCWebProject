@@ -2,34 +2,36 @@
 import = "java.util.*"%>
 <%
 	//AccountUI ui = (AccountUI)session.getAttribute("ui");
+	int numOfStu1,perFem1,satVerbal1,satMath1,price1,finAid1,numOfApp1,perAdmit1,perEnroll1;
+	double academicScale1,socialScale1,lifeScale1;
+	boolean noName = false;
 	String schoolName =request.getParameter("SchoolName");
 	String state = request.getParameter("State");
 	String location =request.getParameter("Location");
 	String control =request.getParameter("Control");
 	String numOfStu =request.getParameter("NumOfStu");
-	int numOfStu1=Integer.parseInt(numOfStu);
 	String perFem =request.getParameter("PerFem");
-	int perFem1=Integer.parseInt(perFem);
+
 	String satVerbal =request.getParameter("SatVerbal");
-	int satVerbal1=Integer.parseInt(satVerbal);
+
 	String satMath =request.getParameter("SatMath");
-	int satMath1=Integer.parseInt(satMath);
+
 	String price =request.getParameter("Price");	
-	int price1=Integer.parseInt(price);
+
 	String finAid =request.getParameter("FinAid");
-	int finAid1=Integer.parseInt(finAid);
+
 	String numOfApp =request.getParameter("NumOfApp");
-	int numOfApp1=Integer.parseInt(numOfApp);
+
 	String perAdmit =request.getParameter("PerAdmit");
-	int perAdmit1=Integer.parseInt(perAdmit);
+
 	String perEnroll =request.getParameter("PerEnroll");
-	int perEnroll1=Integer.parseInt(perEnroll);
+
 	String academicScale =request.getParameter("AcademicScale");
-	double academicScale1=Double.parseDouble(academicScale);
+
 	String socialScale =request.getParameter("SocialScale");	
-	double socialScale1=Double.parseDouble(socialScale);
+
 	String lifeScale =request.getParameter("LifeScale");
-	double lifeScale1=Double.parseDouble(lifeScale);
+
 	String popMajors = request.getParameter("PopMajors");
 
 	List<String> popMajors2 = new ArrayList<String>();
@@ -48,6 +50,96 @@ import = "java.util.*"%>
 		popMajors1[i]=major;
 		
 	}
+ 	if(schoolName==""||schoolName==null){
+		response.sendRedirect("AddUniversityAdmin.jsp");
+ 	}
+ 	 if(state==""||state==null){
+ 		state=Integer.toString(-1);
+ 	}
+ 	 if(location==""||location==null){
+ 		location=Integer.toString(-1);
+ 	}
+ 	 if(control==""||control==null){
+ 		control=Integer.toString(-1);
+ 	} 	
+ 	 if(numOfStu==""||numOfStu == null||numOfStu instanceof String){
+ 		 numOfStu1=-1;
+ 	}
+ 	 else{
+ 		 numOfStu1 =Integer.parseInt(numOfStu);
+ 	 }
+	 if(perFem==""||perFem == null||perFem instanceof String){
+		 perFem1=-1;
+ 	}
+	 else{
+			 perFem1=Integer.parseInt(perFem);
+	 }
+	 if(satVerbal==""||satVerbal == null||satVerbal instanceof String){
+		 satVerbal1=-1;
+ 	}
+	 else{
+			 satVerbal1=Integer.parseInt(satVerbal);
+	 }
+	 if(satMath==""||satMath == null||satMath instanceof String){
+ 		 satMath1=-1;
+ 	}
+	 else{
+			 satMath1=Integer.parseInt(satMath);
+	 }
+	 if(price==""||price == null|| price instanceof String){
+ 		 price1=-1;
+ 	}
+	 else{
+			 price1=Integer.parseInt(price);
+	 }
+	 if(finAid==""||finAid == null|| finAid instanceof String){
+		 finAid1=-1;
+ 	}
+	 else{
+			 finAid1=Integer.parseInt(finAid);
+	 }
+	 if(numOfApp==""||numOfApp == null||numOfApp instanceof String){
+ 		 numOfApp1=-1;
+ 	}
+	 else{
+			 numOfApp1=Integer.parseInt(numOfApp);
+	 }
+	 if(perAdmit==""||perAdmit == null|| perAdmit instanceof String){
+ 		 perAdmit1=-1;
+ 	}
+	 else{
+			 perAdmit1=Integer.parseInt(perAdmit);
+	 }
+	 if(perEnroll==""||perEnroll == null||perEnroll instanceof String){
+		 perEnroll1=-1;
+ 	}
+	 else{
+			 perEnroll1=Integer.parseInt(perEnroll);
+	 }
+	 if(socialScale==""||socialScale == null||socialScale instanceof String){
+ 		 socialScale1=-1;
+ 	}
+	 else{
+			 socialScale1=Double.parseDouble(socialScale);
+			
+	 }
+	 if(lifeScale==""||lifeScale == null||lifeScale instanceof String){
+ 		 lifeScale1=-1;
+ 	}
+	 else{
+			 lifeScale1=Double.parseDouble(lifeScale);
+	 }
+
+	 if(academicScale==""||academicScale == null||academicScale instanceof String){
+ 		 academicScale1=-1;
+ 	}
+	 else{
+		  academicScale1=Double.parseDouble(academicScale);
+	
+	 }
+ 	
+ 	
+ 	
 		
 	
 
@@ -57,10 +149,13 @@ import = "java.util.*"%>
 	DBController db = new DBController();
 	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popMajors1);
 	if(a==false){
-		response.sendRedirect("AddUniversity.jsp");
+
+		response.sendRedirect("AddUniversityAdmin.jsp");
+		out.println("University has not been added");
 	
 	}
 	else{
+		out.println("University has been successfully added");
 		response.sendRedirect("ViewUniversities.jsp");
 	}
 %>
