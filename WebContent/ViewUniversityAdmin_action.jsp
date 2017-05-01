@@ -25,22 +25,8 @@
 	String socialScale =request.getParameter("SocialScale");	
 	String lifeScale =request.getParameter("QualityOfLife");
 	String popMajors = request.getParameter("Emphasis");
-// 	List<String> popMajors2 = new ArrayList<String>();
-// 	for(int i=0;i<popMajors.length();i++){
-// 		if(popMajors.charAt(i)==' '||popMajors.charAt(i)==','){
-// 			int lastSpaceOrComma=i;
-// 			String major = popMajors.substring(i-lastSpaceOrComma,i);
-// 			popMajors2.add(major);
-// 		}
-// 	}
-// 	String[] popMajors1 = new String[popMajors2.size()];
 
-// 	for(int i = 0;i<popMajors2.size();i++){
-// 		String major =popMajors2.get(i);
-	
-// 		popMajors1[i]=major;
-		
-// 	}
+
  		 numOfStu1 =Integer.parseInt(numOfStu);
 			 perFem1=Integer.parseInt(perFem);
 			 satVerbal1=Integer.parseInt(satVerbal);
@@ -73,7 +59,7 @@
 
 	DBController db = new DBController();
 	boolean editComplete = db.editUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1);
-	System.out.println(editComplete);
+	System.out.println("DID IT FREAKING ADD"+editComplete);
 	if(editComplete == true){
 		response.sendRedirect("ViewUniversities.jsp");}
 	else{

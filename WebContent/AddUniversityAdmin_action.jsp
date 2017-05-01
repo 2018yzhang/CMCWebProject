@@ -32,24 +32,13 @@ import = "java.util.*"%>
 
 	String lifeScale =request.getParameter("LifeScale");
 
-	String popMajors = request.getParameter("PopMajors");
+	String popMajors = request.getParameter("PopMajors1");
+	String popMajors1 = request.getParameter("PopMajors2");
+	String popMajors2 = request.getParameter("PopMajors3");
+	String popMajors3 = request.getParameter("PopMajors4");
+	String popMajors4 = request.getParameter("PopMajors5");
+	String[] popList={popMajors,popMajors1,popMajors2,popMajors3,popMajors4,popMajors4};
 
-	List<String> popMajors2 = new ArrayList<String>();
-	for(int i=0;i<popMajors.length();i++){
-		if(popMajors.charAt(i)==' '||popMajors.charAt(i)==','){
-			int lastSpaceOrComma=i;
-			String major = popMajors.substring(i-lastSpaceOrComma,i);
-			popMajors2.add(major);
-		}
-	}
-	String[] popMajors1 = new String[popMajors2.size()];
-
-	for(int i = 0;i<popMajors2.size();i++){
-		String major =popMajors2.get(i);
-	
-		popMajors1[i]=major;
-		
-	}
  	if(schoolName==""||schoolName==null){
 		response.sendRedirect("AddUniversityAdmin.jsp");
  	}
@@ -147,7 +136,7 @@ import = "java.util.*"%>
 	//User u = new User(fname, lname,uname,password);
 	//session.setAttribute("username", uname);
 	DBController db = new DBController();
-	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popMajors1);
+	boolean a = db.addUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1,popList);
 	if(a==false){
 
 		response.sendRedirect("AddUniversityAdmin.jsp");

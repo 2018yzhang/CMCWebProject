@@ -249,12 +249,38 @@ public int addUser(String firstName, String lastName, String username, String pa
    * @return true if delete successfully
    */
   public boolean deleteUniversity(String schoolName){
+
+
+	  
+	  System.out.println(schoolName);
+	  this.deleteEmphasis(schoolName);
 	  int i = univLib.university_deleteUniversity(schoolName);
-	 if(i!=-1){
-		 return true;
+	  
+	  System.out.println(i);
+	  University u = this.viewSpecificSchool(schoolName);
+	  System.out.println(u.getSchoolName());
+	  
+
+	 if(i!=1){
+		 return false;
 	 }
-	 return false;
+	 return true;
   }
+  /**
+   * To delete user-admin only.
+   * @param schoolName the schoolName of the user to be deleted 
+   * @throws IllegalArgumentException if the account has already deactivated or it does not exist
+   * @return true if delete successfully
+   */
+  public void deleteEmphasis(String schoolName){
+	  List<String> list = this.getEmphasesForUniversity(schoolName);
+	  for(int l =0;l <list.size();l++){
+		  String emphasis = list.get(l);
+		   univLib.university_removeUniversityEmphasis(schoolName, emphasis);
+
+		  }
+  }
+  
   /**
    * This method edits a specific university - admin only. - Yidan
     * @param schoolName university to update

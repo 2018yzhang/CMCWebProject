@@ -99,7 +99,14 @@ border="1" cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Popular Majors<br>
 </td>
-<td style="vertical-align: top;"><input name="PopMajors"> </td>
+<td style="vertical-align: top;"><input name="PopMajors1"> 
+<input name="PopMajors2"><br>
+<input name="PopMajors3"><br>
+<input name="PopMajors4"><br>
+<input name="PopMajors5"><br>
+
+</td>
+
 </tr>
 <tr>
 <td style="vertical-align: top;"><input value="Add"

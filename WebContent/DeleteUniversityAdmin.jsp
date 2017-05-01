@@ -9,10 +9,10 @@
 <body>
 	<% 
 	 String uname = request.getParameter("SchoolName1");
-	System.out.println(uname);
 	 AdminFuncController ac = (AdminFuncController)session.getAttribute("ac");
-	 boolean r = ac.deleteUniversity(uname);
-		System.out.println(r);
+	 DBController db = new DBController();
+	 boolean r = db.deleteUniversity(uname);
+	 System.out.println(r);
 	 String msg ="";
 	 if(r==true){
 		 response.sendRedirect("ViewUniversities.jsp");
