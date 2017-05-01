@@ -1,10 +1,8 @@
-<%@page language="java" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" 
+<%@page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="cmc.mario.controllers.*" import="cmc.mario.entities.*" import="cmc.mario.interfaces.*" 
 import ="java.util.*"%>
-<%
-%>
 <html>
 <head>
-
 <title>Manage Universities  Form</title>
 <style type="text/css">
 body{
@@ -102,7 +100,6 @@ h3{
 color: black;
 }
 </style>
-
 </head>
 <body>
 <header>
@@ -127,11 +124,9 @@ color: black;
     </div>
   </li>
 </ul>
-<br>
-<br>
-View Universities form:<br>
+<h3>Manage Universities</h3>
 <table style="text-align: left; width: 266px; height: 228px;"
-border="1" cellpadding="2" cellspacing="2">
+border="1" cellpadding="2" cellspacing="2" id="t01">
 <tbody>
 <tr align="center">
 <td colspan="18" rowspan="1" style="vertical-align: top;"><a
@@ -158,9 +153,6 @@ List<University> list = db.getUniversities();
 <td>Academics Scale(1-5)</td>
 <td>Social Scale(1-5)</td>
 <td>Quality of Life(1-5)</td>
-
-
-
 
 <% for(int i = 0;i<list.size();i++){%>
 <tr>
@@ -200,26 +192,20 @@ List<University> list = db.getUniversities();
     <input name="SocialScale" value="<%= list.get(i).getSocialScale()%>" type="hidden">
     <input name="QualityofLife" value="<%=list.get(i).getLifeScale()%>" type="hidden">
     <input name="Emphasis" value="<%= list.get(i).getPopMajors()%>" type="hidden">
-
-    
-
 </form>
 </td>
 <td>
-
 <form >
       <input name="Delete" value="Delete" type="submit" onclick="if (confirm('Are you sure you want to delete?')) { form.method='post'; form.action='DeleteUniversityAdmin.jsp'; } else { return false; }"
       style="color: white; background-color:black; padding:3px; float:center">
     <input name="SchoolName1" value="<%= list.get(i).getSchoolName()%>" type="hidden">
    </form>
 </td>
-
 </tr>
 <%} %>
-
 </table>
-<br>
-<br>
+</div>
+</div>
 </body>
 </html>
 
