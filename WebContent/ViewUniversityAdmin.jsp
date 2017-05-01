@@ -264,7 +264,6 @@ border="1" >
     <input name="Edit" value="Edit" type="submit" style="color: white; background-color:black; padding:3px; float:center" >
     <input name="SchoolName1" value="<%= schoolName%>" type='hidden' size='100'>
 
- 
 
     
 

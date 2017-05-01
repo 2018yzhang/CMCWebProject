@@ -24,7 +24,8 @@
 	String academicScale =request.getParameter("AcademicScale");
 	String socialScale =request.getParameter("SocialScale");	
 	String lifeScale =request.getParameter("QualityOfLife");
-	//String popMajors = request.getParameter("Emphasis");
+	String popMajors = request.getParameter("Emphasis");
+	String[] poplist = {popMajors};
  		 numOfStu1 =Integer.parseInt(numOfStu);
 			 perFem1=Integer.parseInt(perFem);
 			 satVerbal1=Integer.parseInt(satVerbal);
@@ -41,6 +42,7 @@
 
 	DBController db = new DBController();
 	boolean editComplete = db.editUniversity(schoolName, state, location, control, numOfStu1, perFem1, satVerbal1, satMath1, price1, finAid1, numOfApp1, perAdmit1, perEnroll1, academicScale1, socialScale1, lifeScale1);
+	db.setEmphasisForUniversity(schoolName, poplist);
 	if(editComplete == true){
 		response.sendRedirect("ViewUniversities.jsp");}
 	else{
