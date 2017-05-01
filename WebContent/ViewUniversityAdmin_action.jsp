@@ -6,7 +6,7 @@
 	double academicScale1,socialScale1,lifeScale1;
 	boolean noName = false;
 	String schoolName =request.getParameter("SchoolName1");
-	String state = request.getParameter("State");
+	String state = request.getParameter("state1");
 	String location =request.getParameter("Location");
 	String control =request.getParameter("Control");
 	String numOfStu =request.getParameter("NumberOfStudents");

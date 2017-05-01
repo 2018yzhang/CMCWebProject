@@ -263,6 +263,7 @@ border="1" >
 <form method="post" action="ViewUniversityAdmin_action.jsp" name="Edit">
     <input name="Edit" value="Edit" type="submit" style="color: white; background-color:black; padding:3px; float:center" >
     <input name="SchoolName1" value="<%= schoolName%>" type='hidden' size='100'>
+        <input name="state1" value="<%= state%>" type='hidden' size='100'>
 
 
     

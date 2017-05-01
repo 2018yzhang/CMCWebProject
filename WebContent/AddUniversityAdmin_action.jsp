@@ -30,16 +30,13 @@ import = "java.util.*"%>
 	
 
 
- 	if(schoolName==""||schoolName==null||schoolName==""){
-		
- 	}
- 	 if(state==""||state==null){
+ 	 if(state==""||state==null||state.trim().isEmpty()){
  		state=Integer.toString(-1);
  	}
- 	 if(location==""||location==null){
+ 	 if(location==""||location==null||location.trim().isEmpty()){
  		location=Integer.toString(-1);
  	}
- 	 if(control==""||control==null){
+ 	 if(control==""||control==null||control.trim().isEmpty()){
  		control=Integer.toString(-1);
  	} 	
  	 if(numOfStu==""||numOfStu == null||numOfStu instanceof String){
